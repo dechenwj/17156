@@ -1,8 +1,8 @@
 {
-  "name": "laozhao",
+  "name": "laizhe",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "wenjingchen",
+  "author": "shenglong.li <913937000@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

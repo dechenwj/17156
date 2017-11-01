@@ -10,6 +10,7 @@ sh.exe.stackdump
 .idea
 *.suo
 *.ntvs*
+*.njsproj
 *.sln
 *.project
 package-lock.json
