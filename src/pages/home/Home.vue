@@ -2,6 +2,7 @@
 	<div>
   		<home-header></home-header>
 		<swiper-content></swiper-content>
+		<swiper-category></swiper-category>
 		<hot-Recommend></hot-Recommend>
 		<weekend-content></weekend-content>
 	</div>
@@ -11,6 +12,7 @@
 
 import HeaderComponent from "./Header";
 import SwiperComponent from "./Swiper";
+import CategoryCompontent from "./Category"
 import HotRecommendComponent from "./HotRecommend";
 import WeekendComponent from "./Weekend";
 
@@ -18,6 +20,7 @@ export default {
 	components: {
 		"home-header": HeaderComponent,
 		"swiper-content": SwiperComponent,
+		"swiper-category":CategoryCompontent,
 		"hot-Recommend":HotRecommendComponent,
 		'weekend-content':WeekendComponent
 	}
