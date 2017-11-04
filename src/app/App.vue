@@ -5,7 +5,9 @@
   </div>
 </template>
 
+<script src="./iscroll.js"></script>
 <script>
+
 export default {}
 </script>
 <style>
