@@ -23,7 +23,12 @@
 		</div>
 
 		<div class="indent-num">
-			
+			<p>购买数量<span>最多买5张</span></p>
+			<div>
+				<span class="cut"></span>
+				<span class="new-num"></span>
+				<span class="add"></span>
+			</div>
 		</div>
 		<div class="indent-centre"></div>
 	</div>
