@@ -1,14 +1,12 @@
 <template>
   <header class="header">
   	<div class="header-left iconfont icon-fanhui"></div>
-	<router-link to="/search">
   	<div class="header-title">
-  		输入城市/景点/游玩主题
+  		订单填写
   	</div>
-	</router-link>
   	<div class="header-right">
-  		<div class="header-city-wrapper">
-  				<span class="header-city">北京</span>	
+  		<div class="header-login-wrapper">
+  				<span class="header-login">登录</span>	
   		</div>
   	</div>
   </header>
@@ -37,29 +35,25 @@ export default {
  	.header-title{
  		position: absolute;
  		left:.8rem;
- 		right: 1.36rem;
+ 		right: 1rem;
  		top: .14rem;
- 		
+    font-size: .32rem;
+    color: #fff;
  		line-height: .6rem;
- 		background: #fff;
- 		border-radius: .06rem;
  		text-indent: .2rem;
- 		color: #ccc;
+    text-align: center;
  	}
  	.header-right{
  		float: right;
- 		width: 1.28rem;
+ 		width: 1rem;
  		line-height: .88rem;
  		text-align: center;
  		color: #fff;
  	}
- 	.header-city-wrapper{
+ 	.header-login-wrapper{
  		position: relative;
- 		padding-right:.3rem;
  	}
- 	.header-city{
- 	
- 	
+ 	.header-login{
  		overflow: hidden;
 		display: inline-block;
  		white-space: nowrap;

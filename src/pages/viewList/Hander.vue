@@ -1,11 +1,9 @@
 <template>
   <header class="header">
   	<div class="header-left iconfont icon-fanhui"></div>
-	<router-link to="/list">
   	<div class="header-title">
   		北京
   	</div>
-	</router-link>
   	<div class="header-right">
   		<div class="header-city-wrapper">
   				<span class="header-city">搜索</span>	
