@@ -1,9 +1,11 @@
 <template>
   <header class="header">
   	<div class="header-left iconfont icon-fanhui"></div>
+	<router-link to="/search">
   	<div class="header-title">
   		输入城市/景点/游玩主题
   	</div>
+	</router-link>
   	<div class="header-right">
   		<div class="header-city-wrapper">
   				<span class="header-city">北京</span>	
@@ -18,14 +20,11 @@ export default {
 }
 </script>
 
-
-
 <style>
- 
-	
  	.header{
  		height: .88rem;
  		background: #00bcd4;
+		overflow:hidden;
  	}
  	.header-left{
  		float: left;
@@ -59,10 +58,12 @@ export default {
  		padding-right:.3rem;
  	}
  	.header-city{
- 		display: inline-block;
- 		width: 1rem;
+ 	
+ 	
  		overflow: hidden;
+		display: inline-block;
  		white-space: nowrap;
+		width: 1rem;
  		text-overflow: ellipsis;
  	}
  	.header-city::after{

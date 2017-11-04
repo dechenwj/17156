@@ -6,7 +6,6 @@
 </template>
 
 <script>
-
 import HeaderComponent from "./Header";
 import ContentComponent from "./Content";
 
