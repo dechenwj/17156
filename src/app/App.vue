@@ -4,11 +4,16 @@
   </div>
 </template>
 
-<script src="./iscroll.js"></script>
-<script>
+<script type="text/javascript">
 
-export default {}
+import vue from './vue.js';
+import iScroll from './iscroll.js';
+
+export default {
+	
+}
 </script>
+
 <style>
   @import "./reset.css";
   @import "./iconfont/iconfont.css";

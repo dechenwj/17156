@@ -1,33 +1,40 @@
 <template>
 	<div>
-  		<home-header></home-header>
-		<swiper-content></swiper-content>
-		<swiper-category></swiper-category>
-		<location-Activity></location-Activity>
-		<hot-Recommend></hot-Recommend>
-		<weekend-content></weekend-content>
+  		<index-home></index-home>
+		<index-swipert :swiperInfo="this.$store.state.swiperInfo"></index-swipert>
+		<index-ico-swiper :IcoSwiperInfo="this.$store.state.IcoSwiperInfo"></index-ico-swiper>
+		<index-Activity></index-Activity>
+		<index-hot :HotRecommend="this.$store.state.HotRecommend"></index-hot>
+		<index-weekend :Weekend="this.$store.state.Weekend"></index-weekend>
 	</div>
 </template>
 
 <script>
 
-import HeaderComponent from "./Header";
-import SwiperComponent from "./Swiper";
-import CategoryCompontent from "./Category"
-import HotRecommendComponent from "./HotRecommend";
-import locaActivityComponent from "./locaActivity";
-import WeekendComponent from "./Weekend";
+import Header from "./Component/Header";
+import Swiper from "./Component/Swiper";
+import Category from "./Component/Category";
+import HotRecommend from "./Component/HotRecommend";
+import locaActivity from "./Component/locaActivity";
+import Weekend from "./Component/Weekend";
 
 export default {
+
 	components: {
-		"home-header": HeaderComponent,
-		"swiper-content": SwiperComponent,
-		"location-Activity":locaActivityComponent,
-		"hot-Recommend":HotRecommendComponent,
-		"swiper-category":CategoryCompontent,
-		"hot-Recommend":HotRecommendComponent,
-		'weekend-content':WeekendComponent
+		"index-home": Header,
+		"index-swipert": Swiper,
+		"index-ico-swiper":Category,
+		"index-Activity":locaActivity,
+		"index-hot":HotRecommend,
+		'index-weekend':Weekend
+	},
+
+	mounted() {
+		// if (!this.$store.state.swiperInfo.length) {
+			this.$store.dispatch("getInfo");
+		// }
 	}
+
 }
 </script>
 

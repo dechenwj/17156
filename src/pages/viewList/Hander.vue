@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style socped>
  	.header{
  		height: .88rem;
  		background: #00bcd4;
