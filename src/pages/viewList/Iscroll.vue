@@ -9,7 +9,7 @@
 				<span class="view-sort-con" @click="show2 = !show2 ,show = false">推荐排序<span class="view-bor-top" v-bind:class="{ 'view-bor-top' : bor1, 'view-bor-bottom': !bor1}"></span></span>
 			</div>
 		</div>
-		<div class="view-class-con" v-if="show">
+		<div class="view-class-con" v-show="show">
 			<div id="view-wrapper1">
 				<div id="scroller">
 					<ul id="list">
@@ -20,9 +20,11 @@
 					</ul>
 				</div>
 			</div>
+			
+			<div id="view-class-empty" @click="show = !show, isA = !isA, bor = !bor"></div>
 		</div>
 		
-		<div class="view-sort-content" v-if="show2">
+		<div class="view-sort-content" v-show="show2">
 			<div id="view-wrapper2">
 				<div id="scroller2">
 					<ul id="list2">
@@ -32,6 +34,7 @@
 					</ul>
 				</div>		
 			</div>
+			<div id="view-sort-empty" @click="show2 = !show2, isB = !isB, bor1 = !bor1"></div>
 		</div>
 	</div>
 </template>
@@ -76,14 +79,12 @@
 			}
 		},
 		methods:{
-			
-			
+	
 		}
 	}
 </script>
 
 <style>
-	@import "../../app/css/iscroll.css";
 	.view-iscroll{
 		width: 100%;
 		height: 0.8rem;
@@ -119,7 +120,7 @@
 		height: 0;
 		border: .08rem solid transparent;
 		border-top: .08rem solid #000;
-		left: 2.25rem;
+		left: 75%;
 		top: 0.36rem;
 	}
 	.view-bor-bottom{
@@ -129,8 +130,49 @@
 		height: 0;
 		border: .08rem solid transparent;
 		border-bottom: .08rem solid #00afc7;
-		left: 2.25rem;
+		left: 75%;
 		top: 0.28rem;
+	}
+	#view-wrapper1{
+	width: 100%;
+	height: 50%;
+	background: #ccc;
+	float: left;
+	overflow: hidden;
+	}
+	#view-wrapper2{
+		height: 2.52rem;
+	}
+	#scroller{
+		width: 50%;
+		height:50%;
+		overflow: auto;
+		position: absolute;
+		z-index: 1;
+	}
+	#scroller2{
+		width: 100%;
+		text-align: center;
+	}
+	#scroller ul ,#scroller2 ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		text-align: left;
+	}
+
+	#scroller li ,#scroller2 li {
+		padding: 0 10px;
+		height: 40px;
+		line-height: 40px;
+		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #fff;
+		background-color: #fafafa;
+		font-size: 14px;
+	}
+	#scroller2 li{
+		text-align: center;
 	}
 	.view-class-con{
 		position: fixed;
@@ -162,6 +204,16 @@
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
+	}
+	#view-class-empty{
+		width: 100%;
+	    height: 50%;
+	    float: left;
+	}
+	#view-sort-empty{
+		width: 100%;
+		height: 80%;
+		float: left;
 	}
 </style>
 
