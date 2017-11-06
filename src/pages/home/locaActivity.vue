@@ -21,8 +21,8 @@
 	export default {
 		data(){
 			return {
-				imgHot:"../../../static/e395615b16fb1302.png",
-				imgSales:"../../../static/1685d2108b652302.png"
+				imgHot:"../../../static/img/e395615b16fb1302.png",
+				imgSales:"../../../static/img/1685d2108b652302.png"
 			}
 		}
 	}
@@ -63,12 +63,12 @@
 	.activity-hot-spring-bg{
 		border-right:0.01rem solid #F5F5F5 ;
 		box-sizing: border-box;
-		background: url(../../../static/e395615b16fb1302.png) no-repeat center center;
+		background: url(../../../static/img/e395615b16fb1302.png) no-repeat center center;
 		background-size: auto 100%;
 		background-color: #FFFFFF;
 	}
 	.activity-sales-bg{
-		background: url(../../../static/1685d2108b652302.png) no-repeat center center;
+		background: url(../../../static/img/1685d2108b652302.png) no-repeat center center;
 		background-size: auto 100%;
 		background-color: #FFFFFF;
 	}
