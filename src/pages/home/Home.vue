@@ -30,9 +30,9 @@ export default {
 	},
 
 	mounted() {
-		// if (!this.$store.state.swiperInfo.length) {
+		if (!this.$store.state.swiperInfo.length) {
 			this.$store.dispatch("getInfo");
-		// }
+		}
 	}
 
 }
