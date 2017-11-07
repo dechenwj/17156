@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Search from '@/pages/search/Search'
-import List from '@/pages/list/List'
 import viewList from '@/pages/viewList/Home'
+import Indent from '@/pages/indent/indent'
 import OnedayTour from '@/pages/onedayTour/Home'
 
 
@@ -17,11 +17,6 @@ export default new Router({
       component: Home
     },
     {
-    	path: '/list',
-      name: 'list',
-      component: List
-    },
-    {
       path: '/viewList',
       name: 'viewList',
       component: viewList
@@ -30,6 +25,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: Search
+    },
+    {
+      path: '/indent',
+      name: 'indent',
+      component: Indent
     },
     {
       path:'/onedayTour',

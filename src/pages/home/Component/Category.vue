@@ -1,0 +1,76 @@
+<template>
+	<swiper :options="swiperOption" ref="mySwiper">
+		<swiper-slide>
+			<div class="category-container">
+				<dl class="category-item" v-for="item in IcoSwiperInfo[0]" :key="item.id">
+					<dt class="category-item-img">
+						<img :src="item.img">
+					</dt>
+					<dd class="category-item-title">{{item.title}}</dd>
+				</dl>
+			</div>
+    	</swiper-slide>
+	    <swiper-slide>
+	    	<div class="category-container category-container-two">
+	    		<dl class="category-item" v-for="item in IcoSwiperInfo[1]" :key="item.id">
+					<dt class="category-item-img">
+						<img :src="item.img">
+					</dt>
+					<dd class="category-item-title">{{item.title}}</dd>
+				</dl>
+	    	</div>
+	    </swiper-slide>
+    <div class="swiper-pagination"  slot="pagination"></div>
+  	</swiper>
+</template>
+
+<script>
+	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+	export default {
+		props: ["IcoSwiperInfo"],
+		data() {
+  			return {
+    			swiperOption: {
+	         		direction: 'horizontal',
+	         		autoHeight: true,
+	         		pagination: '.swiper-pagination',
+	         		observeParents: true
+    			}
+ 			}
+		},
+	    components: {
+		    swiper,
+		    swiperSlide
+	  	}
+  	}
+</script>
+<style type="text/css">
+.category-container{
+	width: 100%;
+	height: 3.6rem;
+}
+.category-item{
+	width: 25%;
+	float: left;
+	margin-bottom:-.1rem;
+}
+.category-item-img{
+	width: 100%;
+	text-align: center;
+	padding: .1rem 0;
+	margin-top:.2rem; 
+}
+.category-item-img img{
+	width: .66rem;
+	height: .66rem;
+}
+.category-item-title{
+	width: 100%;
+	text-align: center;
+	padding: .1rem 0;
+	color: #212121;
+	font-size: .28rem;
+	overflow: hidden;
+	white-space: nowrap;	
+}
+</style>

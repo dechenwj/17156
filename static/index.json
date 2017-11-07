@@ -1,0 +1,152 @@
+{
+	"ret": true,
+	"data": {
+		"swiperInfo": [
+			{
+				"id": 1,
+				"imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg"
+			},
+			{
+				"id": 2,
+				"imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/c5/2b4166f592b33202.jpg_640x200_27b41388.jpg"
+			},
+			{
+				"id": 3,
+				"imgUrl": "http://img1.qunarzz.com/piao/fusion/1710/16/1d7693c6bd8abd02.png_640x200_43c308dd.png"
+			}
+		],
+		"IcoSwiperInfo": [
+			[{
+				"id": 1,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
+				"title": "城市风光"},
+			{
+				"id": 2,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/29/c16cd064d85d8502.png",
+				"title": "玻璃栈道"},
+			{
+				"id": 3,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/1c/a8a8d9023a814c02.png",
+				"title": "名胜古迹"},
+			{
+				"id": 4,
+				"img": "https://img1.qunarzz.com/piao/fusion/1602/f2/71eb19f77e3f21f7.png",
+				"title": "周边游"},
+			{
+				"id": 5,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png",
+				"title": "必游榜单"},
+			{
+				"id": 6,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/6d/ee9eb965690ce402.png",
+				"title": "秋色美"},
+			{
+				"id": 7,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/d0/e09575e66f4aa402.png",
+				"title": "游乐场"},
+			{
+				"id": 8,
+				"img": "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
+				"title": "泡温泉"}],
+			[{
+				"id": 9,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
+				"title": "景点门票"},
+			{
+				"id": 10,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png",
+				"title": "动植物园"},
+			{
+				"id": 11,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/45/676b67d7078abc02.png",
+				"title": "故宫"},
+			{
+				"id": 12,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
+				"title": "一日游"},
+			{
+				"id": 13,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/cd/07f33cc087f18d02.png",
+				"title": "自然风光"},
+			{
+				"id": 14,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/ea/8cb1dce519375d02.png",
+				"title": "古北水镇"},
+			{
+				"id": 15,
+				"img": "http://img1.qunarzz.com/piao/fusion/1707/34/9285073fde1eb702.png",
+				"title": "景点讲解"},
+			{
+				"id": 16,
+				"img": "http://img1.qunarzz.com/piao/fusion/1611/be/a70e61e1f57ee302.png",
+				"title": "全部"}]
+		],
+
+		"HotRecommend": [
+			{
+				"id" :1,
+				"name": "故宫",
+				"introduce": "东方宫殿建筑代表，世界宫殿建筑典范",
+				"money": "65",
+				"img": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg"},
+			{
+				"id": 2,
+				"name": "八达岭长城",
+				"introduce": "不到长城非好汉",
+				"money": "25",
+				"img": "http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_140x140_97813766.jpg"},
+			{
+				"id": 3,
+				"name": "颐和园",
+				"introduce": "保存完整的一做皇家行宫御园",
+				"money": "1",
+				"img": "http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_140x140_e20be8e0.jpg"},
+			{
+				"id": 4,
+				"name": "北京欢乐谷",
+				"introduce": "七大主题园区带你畅享北京欢乐谷",
+				"money": "11",
+				"img": "http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_140x140_b05eb1df.jpg"},
+			{
+				"id": 5,
+				"name": "慕田峪长城",
+				"introduce": "秀梅长城,关键是人少",
+				"money": "19.1",
+				"img": "http://img1.qunarzz.com/sight/p0/1708/2b/2b6378fd3b2e1d86a3.img.jpg_140x140_eae81520.jpg"}
+		],
+
+		"Weekend": [
+			{
+				"id": 1,
+				"img":"http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
+				"title":"北京温泉排行榜",
+				"content":"细数北京温泉，温暖你的冬天"
+			},
+			{
+				"id": 2,
+				"img":"http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg",
+				"title":"寻找北京的皇城范儿",
+				"content":"数百年的宫廷庙宇，至今依旧威严霸气"
+			},
+			{
+				"id": 3,
+				"img":"http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
+				"title":"北京必游TOP10",
+				"content":"来北京必去的景点非这些地方莫属"
+			},
+			{
+				"id": 4,
+				"img":"http://img1.qunarzz.com/sight/source/1509/81/0412da9c4db66a.jpg_r_640x214_8e23871e.jpg",
+				"title":"登高望远秋色佳",
+				"content":"山顶满眼彩色，此情此景醉了"
+			},
+			{
+				"id": 5,
+				"img":"http://img1.qunarzz.com/sight/source/1509/28/1bb74b851279e6.jpg_r_640x214_64ebf0ee.jpg",
+				"title":"秋高气爽去礼佛",
+				"content":"秋风伴着美妙轻声，品尝我的另一番滋味"
+			}
+		]			
+
+	}
+}

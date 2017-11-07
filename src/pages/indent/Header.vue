@@ -2,11 +2,11 @@
   <header class="header">
   	<div class="header-left iconfont icon-fanhui"></div>
   	<div class="header-title">
-  		北京
+  		订单填写
   	</div>
   	<div class="header-right">
-  		<div class="header-city-wrapper">
-  				<span class="header-city">搜索</span>	
+  		<div class="header-login-wrapper">
+  				<span class="header-login">登录</span>	
   		</div>
   	</div>
   </header>
@@ -35,33 +35,39 @@ export default {
  	.header-title{
  		position: absolute;
  		left:.8rem;
- 		right: 1.36rem;
+ 		right: 1rem;
  		top: .14rem;
- 		
+    font-size: .32rem;
+    color: #fff;
  		line-height: .6rem;
- 		background: #fff;
- 		border-radius: .06rem;
  		text-indent: .2rem;
- 		color: #ccc;
+    text-align: center;
  	}
  	.header-right{
  		float: right;
- 		width: 1.28rem;
+ 		width: 1rem;
  		line-height: .88rem;
  		text-align: center;
  		color: #fff;
  	}
- 	.header-city-wrapper{
+ 	.header-login-wrapper{
  		position: relative;
- 		padding-right:.3rem;
  	}
- 	.header-city{
- 	
- 	
+ 	.header-login{
  		overflow: hidden;
 		display: inline-block;
  		white-space: nowrap;
 		width: 1rem;
  		text-overflow: ellipsis;
+ 	}
+ 	.header-city::after{
+ 		content: "\0020";
+ 		position: absolute;
+ 		top: .4rem;
+ 		right: .14rem;
+		width: 0;
+		height: 0;
+		border: .1rem solid transparent;
+		border-top: .1rem solid #fff;
  	}
 </style>
