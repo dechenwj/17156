@@ -4,7 +4,7 @@
 			<div class="category-container">
 				<dl class="category-item" v-for="item in IcoSwiperInfo[0]" :key="item.id">
 					<dt class="category-item-img">
-						<img :src="item.img">
+						<img :src="item.img" :alt="item.alt">
 					</dt>
 					<dd class="category-item-title">{{item.title}}</dd>
 				</dl>
@@ -14,7 +14,7 @@
 	    	<div class="category-container category-container-two">
 	    		<dl class="category-item" v-for="item in IcoSwiperInfo[1]" :key="item.id">
 					<dt class="category-item-img">
-						<img :src="item.img">
+						<img :src="item.img" :alt="item.alt">
 					</dt>
 					<dd class="category-item-title">{{item.title}}</dd>
 				</dl>
@@ -56,16 +56,19 @@
 }
 .category-item-img{
 	width: 100%;
+	height: .66rem;
+	line-height: .66rem;
 	text-align: center;
 	padding: .1rem 0;
 	margin-top:.2rem; 
+	overflow: hidden;
 }
 .category-item-img img{
 	width: .66rem;
 	height: .66rem;
 }
 .category-item-title{
-	width: 100%;
+	width: 96%;
 	text-align: center;
 	padding: .1rem 0;
 	color: #212121;

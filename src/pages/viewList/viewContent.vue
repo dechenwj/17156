@@ -13,7 +13,7 @@
 				<div class="view-etail">
 					<h4>
 						<span class="view-name">{{item.place}}</span>
-						<span class="price title"><i>￥</i><em>{{item.price1}}</em>起</span>
+						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起</span>
 					</h4>
 				
 					<div class="view-comments">
@@ -81,7 +81,6 @@
 		},
 		mounted: function() {
 			window.onload = function(){
-				alert("h");
 				setTimeout(function(){
 					myscroll = new iScroll("wrapper",{
 						topOffset: 0,
@@ -156,6 +155,7 @@
 /*图片*/
 	.img{
 		position: relative;
+
 	}
 	.img img{
 		position: absolute;
@@ -190,13 +190,17 @@
 	}
 /*右面详情*/
 	.view-etail {
+		width: 100%;
 		position: relative;
 		left: 1.8rem;
 	}
 	.view-etail .view-name {
+		display: block;
+		width: 56%;
 		color: #212121;
 		font-size: .32rem;
 		line-height: .36rem;
+		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
@@ -214,6 +218,18 @@
 	}
 	.view-etail .price {
 		position:  absolute;
+		display: block;
+		width: 20%;
+		text-align: right;
+		white-space: nowrap;
+		overflow: hidden;
+		top: -.04rem;
+	}
+	.price-ico{
+		display: inline-block;
+		width: 76%;
+		padding-right: .04rem; 
+		overflow: hidden;
 	}
 	.view-comments{
 		margin-top:.56rem; 
@@ -223,7 +239,10 @@
 		font-size: .2rem;
 	}
 	.seat{
-		margin-top:.16rem; 
+		white-space: nowrap;
+		overflow: hidden;
+		margin:.16rem .1rem 0 0; 
+
 	}
 /*票种*/
 .note{
@@ -240,7 +259,9 @@
 }
 .note dl dt{
 	width:80%;
+	white-space: nowrap;
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .note dl dt .note-title{
 	color: #212121;
