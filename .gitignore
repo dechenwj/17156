@@ -12,4 +12,8 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+<<<<<<< HEAD
+=======
+package-lock.json
+>>>>>>> a469fe4ba545113f4e2c59b3a1220ba0dc3b1e31
 *.project
