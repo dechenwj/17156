@@ -2,7 +2,7 @@
 <div>
 	<div id="wrapper">
 	<ul>
-		<li id="loadNotice" style="display: none;">松开加载</li>
+		<li v-if="show" id="loadNotice" style="display: none;">松开加载</li>
 		<li  class="view-list" v-for="item in viewContent">
 			<div class="view">
 				<div class="img">
@@ -73,50 +73,51 @@
 				],
 				myscroll:"",			
 			//是否正在加载中	true表示正在加载  false表示没有加载
+			//
+				show: false,
 				is_r:false,
-				methods: {
-					
-				}
+				flag: false,
+				loading: false,
+				myScroll:""
 			}
 		},
-		mounted: function() {
-			window.onload = function(){
-				alert("h");
-				setTimeout(function(){
-					myscroll = new iScroll("wrapper",{
-						topOffset: 0,
-						//上拉时触发
-						onScrollMove: function(){
-							//如果上拉高度 大于 (内容高度 - wrapper高度) 50px 以上  且是未刷新状态时触发 ; 
-							if(this.y <= ( this.wrapperH - this.scroller.clientHeight -50) && is_r == false){
-								//正在加载状态
-								is_r = true;
-								setTimeout(function(){
-									//这里表示数据加载成功后
-									for (var i = 0;i<3;i++){
-										// w.lis.push({name:"+"});
-									}
-									//这里表示渲染完成后刷新wrapper
-									setTimeout(function(){
-										//显示加载成功状态图标 (没有更多数据时候的提示作用)
-											// w.static = "";
-										},500)
-										//加载完成状态
-										is_r = false;
-										myscroll.refresh();
-								},2000)
-								
-							}
-						},
-						onScrollEnd: function(){
-							//上拉之后如果触发刷新则 状态图标值为1 显示loading状态
-							if(is_r == true){
-								console.log("显示提示");
-							}
-						}
-					});
-				},0);
+
+		methods: {
+			bindEvents() {
+				this.myScroll.on('scroll', this.handleScroll.bind(this));
+				this.myScroll.on('scrollEnd',this.handleScrollEnd.bing(this));
+			},
+
+			handleScroll() {
+				if (!this.loading) {
+					if (this.myScroll.y>100) {
+						this.show = true;
+						this.flag = true;
+					}else{
+						this.show = false;
+					}
+				}
+			},
+			handleScrollEnd() {
+				if (this.flag) {
+					this.loading = true;
+					setTimeout(this.handleGetDate.bind(this), 500);
+				}
+			},
+
+			handleGetDate: function() {
+				this.listItem.append("<li>刷新获取数据</li>");
+				this.loading = false;
+				this.flag = false;
+				this.myScroll.refresh();
 			}
+			
+		},
+
+		mounted: function() {
+			alert(1)
+			this.myScroll = new iScroll("wrapper",{probeType:3,mouseWheel: true});
+			this.bindEvents();
 		}
 	}
 </script>

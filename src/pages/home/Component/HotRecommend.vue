@@ -15,8 +15,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 	export default {
-		props: ["HotRecommend"]
+		computed: mapState({
+			HotRecommend(state) {
+				return state.home.HotRecommend;
+			}
+		})
 	}
 </script>
 

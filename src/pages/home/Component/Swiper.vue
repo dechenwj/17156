@@ -11,9 +11,10 @@
 
 <script>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper' 
+	import { mapState } from "vuex"
+
 	export default {
 
-		props:["swiperInfo"],
 	    data() {
 	      	return {
 	        	swiperOption: {
@@ -25,10 +26,18 @@
 	        	}
 	      	}
 	    },
+
 		components: {
 		   swiper,
 		   swiperSlide
-		}
+		 
+		},
+
+		computed: mapState({
+		   	swiperInfo(state) {
+		   		return state.home.swiperInfo
+		   	}
+		})
 	}
 </script>
 

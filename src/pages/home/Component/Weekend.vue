@@ -15,8 +15,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 	export default {
-		props: ["Weekend"]
+		computed: mapState({
+			Weekend(state) {
+				return state.home.Weekend;
+			}
+		})
 	}
 	// export default 
 </script>
