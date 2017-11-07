@@ -17,6 +17,7 @@ import CategoryCompontent from "./Category"
 import HotRecommendComponent from "./HotRecommend";
 import locaActivityComponent from "./locaActivity";
 import WeekendComponent from "./Weekend";
+import axios from 'axios';
 
 export default {
 	components: {

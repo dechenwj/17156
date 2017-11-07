@@ -1,10 +1,12 @@
 <template>
     <header class="header">
         <div class="header-return iconfont icon-fanhui"></div>
-        <div class="header-country">
-            <span class="header-city inland " :class="ischeck" @click="inlandClick">国内</span>
-            <span class="header-city foreign" :class="ischecked" @click="foreignClick">海外</span>
-        </div>
+        <h1 class="header-title">
+            <div class="header-country">
+                <span class="header-city inland " :class="ischeck" @click="inlandClick">国内</span>
+                <span class="header-city foreign" :class="ischecked" @click="foreignClick">海外</span>
+            </div>
+        </h1>
     </header>
 </template>
 
@@ -31,7 +33,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
  	.header{
  		height: .88rem;
  		background: #00bcd4;
@@ -44,19 +47,22 @@ export default {
  		line-height: .88rem;
  		font-size: .4rem;
  		color: #fff;
- 	}
+     }
+    .header-title{
+        text-align: center;
+    }
  	.header-country{
         display: inline-block;
+        margin-left: -.42rem;
         font-size: 0;
         width: 4rem;
+        margin-top: .15rem;
  		background: #fff;
  		border-radius: .06rem;
- 		color: #ccc;
-        margin-top: .15rem;
-        margin-left: 10%;
-        text-align: center;
+ 		color:#00bcd4;
  	}
     .header-city {
+        text-align: center;
         display: inline-block;
         width: 1.96rem;
         height: .56rem;
