@@ -1,11 +1,11 @@
 <template>
 	<div>
   		<index-home></index-home>
-		<index-swipert :swiperInfo="this.$store.state.swiperInfo"></index-swipert>
-		<index-ico-swiper :IcoSwiperInfo="this.$store.state.IcoSwiperInfo"></index-ico-swiper>
+		<index-swipert ></index-swipert>
+		<index-ico-swiper ></index-ico-swiper>
 		<index-Activity></index-Activity>
-		<index-hot :HotRecommend="this.$store.state.HotRecommend"></index-hot>
-		<index-weekend :Weekend="this.$store.state.Weekend"></index-weekend>
+		<index-hot ></index-hot>
+		<index-weekend ></index-weekend>
 	</div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 	},
 
 	mounted() {
-		if (!this.$store.state.swiperInfo.length) {
+		if (!this.$store.getters.shouldGetData) {
 			this.$store.dispatch("getInfo");
 		}
 	}

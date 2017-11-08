@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul id="tourWrapper">
-      <li class="tour-list" v-for="item in tourContent">
+      <li class="tour-list" v-for="item in tourContent" :key = "item.price">
           <div class="tour-img">
                <img :src="item.img">
               <p class="tomorrow" v-if="item.show">可定明日</p> 
@@ -15,8 +15,8 @@
                 <li><a href="jacaScript:;">{{item.li3}}</a></li>
               </ol>
               <div class="present" v-if="item.present">赠券</div>
-            <div class="sale icotitle"><i>￥</i><strong>{{item.price}}</strong>起</div>
-            <p class="sold icotitle">已售<span>{{item.num}}</span></p>
+            <div class="sale icotitle"><i>￥</i><strong >{{item.price}}</strong>起</div>
+            <p class="sold icotitle">已售<span >{{item.num}}</span></p>
           </div>          
       </li>
     </ul>
@@ -32,22 +32,14 @@
 </template>
 
 <script>
+  import { mapState } from "vuex"
+
   export default {
-    data() {
-      return {
-       tourContent:[
-        {show:true,img:"http://img1.qunarzz.com/p/tts2/1707/43/8250a273d1946502.jpg_110x110_532f0563.jpg",title:"[北京出发]",con:"天安门+故宫【赠送珍宝馆】+八达岭长城+鸟巢...",li1:"北京出发",li2:"无自费",li3:"无购物",price:24,num:931,present:false},
-          {show:true,img:"http://img1.qunarzz.com/p/tts0/1511/7e/f82b6124019d78f7.jpg_110x110_f99e78f5.jpg",title:"【配备无线耳麦】",con:"故宫+珍宝馆深度纯玩半日游（含导游+门票）",li1:"北京出发",li2:"无自费",li3:"无购物",price:75,num:400,present:false},
-          {show:false,img:"http://img1.qunarzz.com/p/tts1/1605/35/f267ae654a8511f7.jpg_110x110_33358754.jpg",title:"【休闲纯玩半日游】",con:"恭王府.含大戏楼+什刹海+黄包车半日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:90,num:189,present:false},
-           {show:true,img:"http://img1.qunarzz.com/p/tts3/1708/e0/9072ffc0ef322302.jpg_110x110_52fb9421.jpg",title:"[北京出发]",con:"天安门+故宫【赠送珍宝馆】+八达岭长城+鸟巢...",li1:"北京出发",li2:"无自费",li3:"无购物",price:24,num:931,present:false},
-            {show:true,img:"http://img1.qunarzz.com/p/tts2/1707/43/8250a273d1946502.jpg_110x110_532f0563.jpg",title:"【7-12点天天发】",con:"八达岭长城+往返直通车+门票，自由可选！",li1:"北京出发",li2:"无自费",li3:"无购物",price:45,num:7379,present:true},
-             {show:false,img:"http://img1.qunarzz.com/p/tts0/1707/e3/d77d245a07ca4102.jpg_110x110_b3252ca4.jpg",title:"【爆款】",con:"北京八达岭长城+十三陵定陵含地宫鸟巢纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:148,num:3457,present:false},
-              {show:true,img:"http://img1.qunarzz.com/p/tts1/1611/34/ce613ef51240ad02.jpg_110x110_fb7e8f08.jpg",title:"【5大景点】",con:"广场+故宫+八达岭长城+鸟巢水立方，北京一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:204,num:254,present:false},
-              {show:true,img:"http://img1.qunarzz.com/p/tts4/1511/bb/0e9192fe4e7fcef7.jpg_110x110_058b32ed.jpg",title:"【深度文化游】",con:"故宫+恭王府+颐和园+鸟巢水立方纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:208,num:2345,present:false},
-              {show:true,img:"http://img1.qunarzz.com/p/tts1/1505/c9/4cdfc7d9932008.jpg_110x110_16d9c8ff.jpg",title:"",con:"北京八达岭长城＋庆丰包子铺+恭王府+鸟巢.水立方纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:198,num:343,present:true}
-        ]
-       }
-    }
+      computed: mapState({
+         tourContent(state) {
+            return state.onedayTour.tourContent;
+         }
+      })
   }
 </script>
 <style>

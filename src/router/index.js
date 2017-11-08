@@ -7,7 +7,6 @@ import CityList from '@/pages/city/CityList'
 import Indent from '@/pages/indent/indent'
 import OnedayTour from '@/pages/onedayTour/Home'
 
-
 Vue.use(Router)
 
 export default new Router({

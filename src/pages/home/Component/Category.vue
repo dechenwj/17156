@@ -26,8 +26,9 @@
 
 <script>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+	import { mapState } from "vuex"
 	export default {
-		props: ["IcoSwiperInfo"],
+		
 		data() {
   			return {
     			swiperOption: {
@@ -38,10 +39,17 @@
     			}
  			}
 		},
+
 	    components: {
 		    swiper,
 		    swiperSlide
-	  	}
+	  	},
+
+	  	computed: mapState({
+	  		IcoSwiperInfo(state) {
+	  			return state.home.IcoSwiperInfo
+	  		}
+	  	})
   	}
 </script>
 <style type="text/css">

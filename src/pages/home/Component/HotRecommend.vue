@@ -15,8 +15,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 	export default {
-		props: ["HotRecommend"]
+		computed: mapState({
+			HotRecommend(state) {
+				return state.home.HotRecommend;
+			}
+		})
 	}
 </script>
 
@@ -39,6 +45,7 @@
 		height: 1.4rem;
 		float: left;
 		padding-right: .24rem;
+		background:url(../../../../static/img/timg.jpg) no-repeat left top;
 	}
 	.hotRe-list-name{
 		font-size: .3rem;
