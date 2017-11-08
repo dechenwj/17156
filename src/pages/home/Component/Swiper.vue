@@ -1,6 +1,6 @@
 <template>
   	<swiper :options="swiperOption" ref="mySwiper">
-    	<swiper-slide v-for="item in swiperInfo" :key="item.id">
+    	<swiper-slide v-for="item in SwiperInfo" :key="item.id">
     		<div class="swiper-img-con">
     			<img class="swiper-img" :src="item.imgUrl">
     		</div>
@@ -29,13 +29,12 @@
 
 		components: {
 		   swiper,
-		   swiperSlide
-		 
+		   swiperSlide	 
 		},
 
 		computed: mapState({
-		   	swiperInfo(state) {
-		   		return state.home.swiperInfo
+		   	SwiperInfo(state) {
+		   		return state.home.SwiperInfo
 		   	}
 		})
 	}

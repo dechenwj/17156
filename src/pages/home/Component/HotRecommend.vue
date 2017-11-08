@@ -45,6 +45,7 @@ import { mapState } from "vuex"
 		height: 1.4rem;
 		float: left;
 		padding-right: .24rem;
+		background:url(../../../../static/img/timg.jpg) no-repeat left top;
 	}
 	.hotRe-list-name{
 		font-size: .3rem;

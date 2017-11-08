@@ -4,7 +4,7 @@ dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+package-lock.json
 # Editor directories and files
 .idea
 .vscode
@@ -12,5 +12,12 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*package-lock.json
+=======
 package-lock.json
+>>>>>>> c14ea6252a20d52b1538ce801dbe322d1c6b9593
+>>>>>>> a469fe4ba545113f4e2c59b3a1220ba0dc3b1e31
 *.project

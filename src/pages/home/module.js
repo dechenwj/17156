@@ -3,7 +3,7 @@ import axios from "axios"
 
 export default {
 	state: {
-		swiperInfo: [],
+		SwiperInfo: [],
 		IcoSwiperInfo: [],
 		HotRecommend: [],
 		Weekend: []
@@ -21,7 +21,7 @@ export default {
 	},
 	mutations: {
 		changeInfo(state, data) {
-			state.swiperInfo = data.swiperInfo;
+			state.SwiperInfo = data.SwiperInfo;
 			state.IcoSwiperInfo = data.IcoSwiperInfo;
 			state.HotRecommend = data.HotRecommend;
 			state.Weekend = data.Weekend;
@@ -30,7 +30,7 @@ export default {
 	},
 	getters: {
 		shouldGetData(state) {
-			if (!state.swiperInfo.length &&
+			if (!state.SwiperInfo.length &&
 		 		!state.IcoSwiperInfo.length &&
 		 		!state.HotRecommend.length &&
 		 		!state.Weekend) {
