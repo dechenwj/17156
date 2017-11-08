@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home'
 import Search from '@/pages/search/Search'
 import viewList from '@/pages/viewList/Home'
 import CityList from '@/pages/city/CityList'
+import Indent from '@/pages/indent/indent'
 import OnedayTour from '@/pages/onedayTour/Home'
 
 
@@ -35,6 +36,16 @@ export default new Router({
       path: '/onedayTour',
       name: "onedayTour",
       component: OnedayTour
+    },
+    {
+      path: '/indent',
+      name: 'indent',
+      component: Indent
+    },
+    {
+      path:'/onedayTour',
+      name:"onedayTour",
+      component:OnedayTour
     }
   ]
 })

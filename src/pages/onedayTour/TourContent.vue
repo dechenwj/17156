@@ -1,33 +1,33 @@
 <template>
-<div>
-  <ul id="tourWrapper">
-    <li class="tour-list" v-for="item in tourContent">
-        <div class="tour-img">
-             <img :src="item.img">
-            <p class="tomorrow" v-if="item.show">可定明日</p> 
-        </div>
+  <div>
+    <ul id="tourWrapper">
+      <li class="tour-list" v-for="item in tourContent">
+          <div class="tour-img">
+               <img :src="item.img">
+              <p class="tomorrow" v-if="item.show">可定明日</p> 
+          </div>
 
-        <div class="tour-cont">
-          <h4 class="tour-cont-title">{{item.title}}{{item.con}}</h4>
-            <ol>
-              <li class="first-title"><a href="jacaScript:;">{{item.li1}}</a></li>
-              <li><a href="jacaScript:;">{{item.li2}}</a></li>
-              <li><a href="jacaScript:;">{{item.li3}}</a></li>
-            </ol>
-            <div class="present" v-if="item.present">赠券</div>
-          <span class="sale icotitle"><i>￥</i><strong>{{item.price}}</strong>起</span>
-          <p class="sold icotitle">已售<span>{{item.num}}</span></p>
-        </div>          
-    </li>
-  </ul>
-  <div class="footer">
-    <div class="pagelist">
-      <span class="pre-page pageN">上一页</span>
-      <span class="page-num">1</span>
-      <span class="next-page pageN">下一页</span>
+          <div class="tour-cont">
+            <h4 class="tour-cont-title">{{item.title}}{{item.con}}</h4>
+              <ol>
+                <li class="first-title"><a href="jacaScript:;">{{item.li1}}</a></li>
+                <li><a href="jacaScript:;">{{item.li2}}</a></li>
+                <li><a href="jacaScript:;">{{item.li3}}</a></li>
+              </ol>
+              <div class="present" v-if="item.present">赠券</div>
+            <div class="sale icotitle"><i>￥</i><strong>{{item.price}}</strong>起</div>
+            <p class="sold icotitle">已售<span>{{item.num}}</span></p>
+          </div>          
+      </li>
+    </ul>
+    <div class="footer">
+      <div class="pagelist">
+        <span class="pre-page pageN">上一页</span>
+        <span class="page-num">1</span>
+        <span class="next-page pageN">下一页</span>
+      </div>
+      <p class="toWhere"><a href="javaScript;">去哪门票</a></p>
     </div>
-    <p class="toWhere"><a href="javaScript;">去哪门票</a></p>
-  </div>
   </div>
 </template>
 
@@ -44,8 +44,7 @@
              {show:false,img:"http://img1.qunarzz.com/p/tts0/1707/e3/d77d245a07ca4102.jpg_110x110_b3252ca4.jpg",title:"【爆款】",con:"北京八达岭长城+十三陵定陵含地宫鸟巢纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:148,num:3457,present:false},
               {show:true,img:"http://img1.qunarzz.com/p/tts1/1611/34/ce613ef51240ad02.jpg_110x110_fb7e8f08.jpg",title:"【5大景点】",con:"广场+故宫+八达岭长城+鸟巢水立方，北京一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:204,num:254,present:false},
               {show:true,img:"http://img1.qunarzz.com/p/tts4/1511/bb/0e9192fe4e7fcef7.jpg_110x110_058b32ed.jpg",title:"【深度文化游】",con:"故宫+恭王府+颐和园+鸟巢水立方纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:208,num:2345,present:false},
-              {show:true,img:"http://img1.qunarzz.com/p/tts1/1505/c9/4cdfc7d9932008.jpg_110x110_16d9c8ff.jpg",title:"",con:"北京八达岭长城＋庆丰包子铺+恭王府+鸟巢.水立方纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:198,num:343,present:true},
-
+              {show:true,img:"http://img1.qunarzz.com/p/tts1/1505/c9/4cdfc7d9932008.jpg_110x110_16d9c8ff.jpg",title:"",con:"北京八达岭长城＋庆丰包子铺+恭王府+鸟巢.水立方纯玩一日游",li1:"北京出发",li2:"无自费",li3:"无购物",price:198,num:343,present:true}
         ]
        }
     }
@@ -103,6 +102,7 @@ body{
 }
 .tour-cont-title{
   width: 70%; 
+  height: .72rem;
   line-height: .36rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -139,7 +139,7 @@ body{
 }
 .tour-cont .sale{
   position: absolute;
-  width: 25%;
+  width: 20%;
   height: .32rem;
   text-align: right;
   top:1rem;
@@ -162,6 +162,9 @@ body{
   width: 100%;
   overflow: hidden;
   padding:.1rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .footer{
   width: 100%;

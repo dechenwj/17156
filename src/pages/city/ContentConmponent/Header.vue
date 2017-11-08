@@ -2,9 +2,9 @@
     <header class="header">
         <div class="header-return iconfont icon-fanhui"></div>
         <h1 class="header-title">
-            <div class="header-country">
-                <span class="header-city inland " :class="ischeck" @click="inlandClick">国内</span>
-                <span class="header-city foreign" :class="ischecked" @click="foreignClick">海外</span>
+            <div class="header-country" @click="handleTypeClick">
+                <span class="header-city inland " :class="{'check': isActive}" inland=true>国内</span>
+                <span class="header-city foreign" :class="{'check': !isActive}">海外</span>
             </div>
         </h1>
     </header>
@@ -14,18 +14,16 @@
 export default {
 	data(){
         return{
-            ischeck: "check",
-            ischecked: ""
+            isActive: true
         }
     },
+
     methods: {
-        inlandClick() {
-            this.ischecked = "";
-            this.ischeck = "check";
-        },
-        foreignClick(){
-            this.ischeck = "";
-            this.ischecked = "check";
+
+        handleTypeClick(e) {
+            const isInland = e.target.getAttribute("inland");
+            this.isActive = isInland ? true : false;
+            this.$emit('change', this.isActive)
         },
 
     }
@@ -52,6 +50,7 @@ export default {
         text-align: center;
     }
  	.header-country{
+        z-index: 10;
         display: inline-block;
         margin-left: -.42rem;
         font-size: 0;

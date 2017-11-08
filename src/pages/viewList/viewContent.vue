@@ -1,7 +1,9 @@
 <template>
 <div>
-	<ul id="wrapper">
-		<li class="view-list" v-for="item in viewContent">
+	<div id="wrapper">
+	<ul>
+		<li id="loadNotice" style="display: none;">松开加载</li>
+		<li  class="view-list" v-for="item in viewContent">
 			<div class="view">
 				<div class="img">
 					<img :src="item.img">
@@ -11,7 +13,7 @@
 				<div class="view-etail">
 					<h4>
 						<span class="view-name">{{item.place}}</span>
-						<span class="price title"><i>￥</i><em>{{item.price1}}</em>起</span>
+						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起</span>
 					</h4>
 				
 					<div class="view-comments">
@@ -35,6 +37,7 @@
 			</div>
 		</li>
 	</ul>
+	</div>
 	<div class="footer">
 		<div class="pagelist">
 			<span class="pre-page pageN">上一页</span>
@@ -48,7 +51,7 @@
 </template>
 
 <script>
-	// var myscroll = new iScroll("wrapper");
+
 	export default {
 		data() {
 			return {
@@ -67,7 +70,51 @@
 					mpKindname1:"故宫成人票",mpKindname2:"(成人票)",price2:39.9,price3:60},
 					{show:false,img:"http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_110x110_2de732a1.jpg",place:"水立方",price1:14,discuss:23413,position:"北京.奥林匹克公园",mpKind1:"水立方",mpKind2:"水立方",
 					mpKindname1:"成人票",mpKindname2:"儿童票",price2:30,price3:14,}
-				]
+				],
+				myscroll:"",			
+			//是否正在加载中	true表示正在加载  false表示没有加载
+				is_r:false,
+				methods: {
+					
+				}
+			}
+		},
+		mounted: function() {
+			window.onload = function(){
+				setTimeout(function(){
+					myscroll = new iScroll("wrapper",{
+						topOffset: 0,
+						//上拉时触发
+						onScrollMove: function(){
+							//如果上拉高度 大于 (内容高度 - wrapper高度) 50px 以上  且是未刷新状态时触发 ; 
+							if(this.y <= ( this.wrapperH - this.scroller.clientHeight -50) && is_r == false){
+								//正在加载状态
+								is_r = true;
+								setTimeout(function(){
+									//这里表示数据加载成功后
+									for (var i = 0;i<3;i++){
+										// w.lis.push({name:"+"});
+									}
+									//这里表示渲染完成后刷新wrapper
+									setTimeout(function(){
+										//显示加载成功状态图标 (没有更多数据时候的提示作用)
+											// w.static = "";
+										},500)
+										//加载完成状态
+										is_r = false;
+										myscroll.refresh();
+								},2000)
+								
+							}
+						},
+						onScrollEnd: function(){
+							//上拉之后如果触发刷新则 状态图标值为1 显示loading状态
+							if(is_r == true){
+								console.log("显示提示");
+							}
+						}
+					});
+				},0);
 			}
 		}
 	}
@@ -108,6 +155,7 @@
 /*图片*/
 	.img{
 		position: relative;
+
 	}
 	.img img{
 		position: absolute;
@@ -142,13 +190,17 @@
 	}
 /*右面详情*/
 	.view-etail {
+		width: 100%;
 		position: relative;
 		left: 1.8rem;
 	}
 	.view-etail .view-name {
+		display: block;
+		width: 56%;
 		color: #212121;
 		font-size: .32rem;
 		line-height: .36rem;
+		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
@@ -166,6 +218,18 @@
 	}
 	.view-etail .price {
 		position:  absolute;
+		display: block;
+		width: 20%;
+		text-align: right;
+		white-space: nowrap;
+		overflow: hidden;
+		top: -.04rem;
+	}
+	.price-ico{
+		display: inline-block;
+		width: 76%;
+		padding-right: .04rem; 
+		overflow: hidden;
 	}
 	.view-comments{
 		margin-top:.56rem; 
@@ -175,7 +239,10 @@
 		font-size: .2rem;
 	}
 	.seat{
-		margin-top:.16rem; 
+		white-space: nowrap;
+		overflow: hidden;
+		margin:.16rem .1rem 0 0; 
+
 	}
 /*票种*/
 .note{
@@ -192,7 +259,9 @@
 }
 .note dl dt{
 	width:80%;
+	white-space: nowrap;
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .note dl dt .note-title{
 	color: #212121;
