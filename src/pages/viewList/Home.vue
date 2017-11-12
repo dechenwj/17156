@@ -20,7 +20,7 @@
 
 		mounted() {
 			if(this.$store.getters.GetViewListData) {
-				this.$store.dispatch("getViewListInfo");
+			 	this.$store.dispatch("getViewListInfo");
 			}
 		}
 	}

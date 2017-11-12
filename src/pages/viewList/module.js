@@ -18,6 +18,9 @@ export default {
 	mutations: {
 		changeViewListInfo(state,data) {
 			state.viewContent = data.viewContent
+		},
+		viewListRefresh(state) {
+			state.viewContent.push(...state.viewContent)
 		}
 	},
 	getters: {

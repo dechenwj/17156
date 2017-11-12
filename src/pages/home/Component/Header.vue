@@ -1,8 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header" >
   	<div class="header-left iconfont icon-fanhui"></div>
 	<router-link to="/search">
-  	<div class="header-title">
+  	<div class="header-title" key="home">
   		输入城市/景点/游玩主题
   	</div>
 	</router-link>

@@ -2,7 +2,7 @@
 <div>
 	<div id="wrapper">
 	<ul>
-		<li v-if="show" id="loadNotice" style="display: none;">松开加载</li>
+		<p v-if="show">松开加载..</p>
 		<li  class="view-list" v-for="item in viewContent">
 			<div class="view">
 				<div class="img">
@@ -52,16 +52,15 @@
 
 <script>
 	import { mapState } from "vuex"
-	require("./iscroll.js")
-	import iScroll from "./iscroll.js"
+	// require("./iscroll.js")
+	import iScroll from "../../utils/iscroll-probe.js"
 	export default {
 		data() {
 			return {	
-				myscroll:"",			
+				myscroll:"",
 			//是否正在加载中	true表示正在加载  false表示没有加载
 			
 				show: false,
-				is_r:false,
 				flag: false,
 				loading: false,
 				myScroll:""
@@ -92,9 +91,10 @@
 			},
 
 			handleScrollEnd() {
-
 				if (this.flag) {
+					this.show = false;
 					this.loading = true;
+					this.$store.commit("viewListRefresh")
 					setTimeout(this.handleGetDate.bind(this), 500);
 				}
 			},
@@ -102,18 +102,18 @@
 			handleGetDate: function() {
 				this.loading = false;
 				this.flag = false;
-				this.myScroll.refresh();
 			}
-			
 		},
 
 		mounted:function() {
-			this.myScroll = new iScroll("#wrapper");
+			this.myScroll = new iScroll("#wrapper" ,{ mouseWheel: true,probeType:2 });
 		},
 
 		updated: function() {
-			this.myScroll.refresh;
-			this.bindEvents();
+			setTimeout(()=>{
+          		this.myScroll.refresh();
+				this.bindEvents();
+        	},500)
 		}
 	}
 </script>
