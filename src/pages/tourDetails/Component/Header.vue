@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style type="text/css" scoped>
+<style scoped>
 .place{
 	position: absolute;
 	color: #fff;

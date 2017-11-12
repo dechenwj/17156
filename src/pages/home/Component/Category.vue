@@ -54,10 +54,11 @@
 	  	})
   	}
 </script>
-<style type="text/css">
+<style scoped>
 .category-container{
 	width: 100%;
 	height: 3.6rem;
+	background: #fff;
 }
 .category-item{
 	width: 25%;

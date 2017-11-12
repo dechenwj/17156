@@ -26,7 +26,7 @@ import { mapState } from "vuex"
 	}
 </script>
 
-<style>
+<style scoped>
 	.hot{
 		height: .8rem;
 		line-height: .8rem;

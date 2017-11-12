@@ -86,7 +86,7 @@ export default{
 </script>
 
 
-<style>
+<style scoped>
 .content{
     width:100%;
     box-shadow: 0 1px 3px 1px #c7ced4;

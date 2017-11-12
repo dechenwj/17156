@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import HeaderComponent from "./Hander";
+	import HeaderComponent from "./Header";
 	// import iscrollComponent from "./Iscroll";
 	import ContentComponent from "./viewContent";
 	export default {

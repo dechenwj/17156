@@ -13,7 +13,7 @@
 				<div class="view-etail">
 					<h4>
 						<span class="view-name">{{item.place}}</span>
-						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起</span>
+						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起	`</span>
 					</h4>
 				
 					<div class="view-comments">

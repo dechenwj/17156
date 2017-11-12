@@ -84,7 +84,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.view-iscroll{
 		width: 100%;
 		height: 0.8rem;

@@ -51,7 +51,7 @@
 	}
 </script>
 
-<style socped>
+<style scoped>
 	.indent-main {
 		width: 100%;
 		padding-bottom: 1.4rem;
