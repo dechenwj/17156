@@ -6,11 +6,12 @@
         <ul id="tourWrapper">
           <li v-if="showLoading">正在加载...</li>
           <li class="tour-list" v-for="item in TourConentinfo">
+          <router-link :to="item.link">
               <div class="tour-img">
                    <img :src="item.img">
                   <p class="tomorrow" v-if="item.show">可定明日</p> 
               </div>
-
+          </router-link>  
               <div class="tour-cont">
                 <h4 class="tour-cont-title">{{item.title}}{{item.con}}</h4>
                   <ol>
@@ -21,7 +22,8 @@
                   <div class="present" v-if="item.present">赠券</div>
                 <div class="sale icotitle"><i>￥</i><strong>{{item.price}}</strong>起</div>
                 <p class="sold icotitle">已售<span>{{item.num}}</span></p>
-              </div>          
+              </div> 
+                    
           </li>
         </ul>
       </div>

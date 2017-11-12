@@ -70,6 +70,7 @@ export default {
  }
  .start{
  	color: #00afc7;
+ 	font-size:.24rem;
  }
  .comments-date{
  	float: right;

@@ -2,7 +2,7 @@
 <div>
 	<view-header></view-header>
 	<view-iscroll></view-iscroll>
-	<view-Content></view-Content>
+	<view-content></view-content>
 </div>
 </template>
 
@@ -14,7 +14,7 @@
 		components:{
 			"view-header": HeaderComponent,
 			"view-iscroll":iscrollComponent,
-			"view-Content": ContentComponent
+			"view-content": ContentComponent
 		}
 	}
 </script>
