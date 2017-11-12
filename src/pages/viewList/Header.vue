@@ -1,6 +1,8 @@
 <template>
   <header class="header">
+  <router-link to="/">
   	<div class="header-left iconfont icon-fanhui"></div>
+    </router-link>
   	<div class="header-title">
   		北京
   	</div>

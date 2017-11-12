@@ -1,6 +1,8 @@
 <template>
     <header class="header">
+        <router-link to="/">
         <div class="header-return iconfont icon-fanhui"></div>
+        </router-link>
         <h1 class="header-title">
             <div class="header-country" @click="handleTypeClick">
                 <span class="header-city inland"  :class="{'check': !isActive}">国内</span>

@@ -11,7 +11,6 @@ export default {
 				.then((response) => {
 					if (response.status === 200) {
 						const { data } = response.data;
-						console.log(data)
 						context.commit("changeSearchInfo",data);
  					}
 				})

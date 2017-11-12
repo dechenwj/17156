@@ -13,10 +13,12 @@
 	    <swiper-slide>
 	    	<div class="category-container category-container-two">
 	    		<dl class="category-item" v-for="item in IcoSwiperInfo[1]" :key="item.id">
+	    		<router-link :to="item.link">
 					<dt class="category-item-img">
 						<img :src="item.img" :alt="item.alt">
 					</dt>
 					<dd class="category-item-title">{{item.title}}</dd>
+				</router-link>	
 				</dl>
 	    	</div>
 	    </swiper-slide>
@@ -52,10 +54,11 @@
 	  	})
   	}
 </script>
-<style type="text/css">
+<style scoped>
 .category-container{
 	width: 100%;
 	height: 3.6rem;
+	background: #fff;
 }
 .category-item{
 	width: 25%;

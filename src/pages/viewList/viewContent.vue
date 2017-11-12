@@ -1,8 +1,8 @@
 <template>
 <div>
-	<div id="wrapper" ref="test">
+	<div id="wrapper">
 	<ul>
-		<li v-if="show" id="loadNotice" style="display: none;">松开加载</li>
+		<p v-if="show">松开加载..</p>
 		<li  class="view-list" v-for="item in viewContent">
 			<div class="view">
 				<div class="img">
@@ -13,7 +13,7 @@
 				<div class="view-etail">
 					<h4>
 						<span class="view-name">{{item.place}}</span>
-						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起</span>
+						<span class="price title"><span class="price-ico"><i>￥</i><em>{{item.price1}}</em></span>起	`</span>
 					</h4>
 				
 					<div class="view-comments">
@@ -51,36 +51,27 @@
 </template>
 
 <script>
-	import iScroll from "./iscroll.js"
+	import { mapState } from "vuex"
+	// require("./iscroll.js")
+	import iScroll from "../../utils/iscroll-probe.js"
 	export default {
 		data() {
-			return {
-				viewContent:[
-				{show:true,img:"http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_110x110_fac6a6cd.jpg",place:"故宫(5A)",price1:88,discuss:14656,position:"北京.东城区",mpKind1:"【当日票】",mpKind2:"【上午场】",
-					mpKindname1:"故宫成人票",mpKindname2:"故宫成人票",price2:39.9,price3:39.9},
-					{show:false,img:"http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_110x110_d9d85877.jpg",place:"颐和园(5A)",price1:22.9,discuss:21031,position:"北京.海淀区",mpKind1:"颐和园+",mpKind2:"颐和园+",
-					mpKindname1:"园中园成人票",mpKindname2:"园中园学生/成人票",price2:48.9,price3:25},
-					{show:true,img:"http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_110x110_684eb80e.jpg",place:"八达岭长城(5A)",price1:25,discuss:14656,position:"北京.延庆县",mpKind1:"八达岭长城门票+",mpKind2:"八达岭长城门票+",
-					mpKindname1:"空中索道往返成人票",mpKindname2:"空中索道往返学生/...",price2:175,price3:157.5},
-					{show:false,img:"http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_110x110_d957be56.jpg",place:"恭王府(5A)",price1:18.2,discuss:24417,position:"北京.西城区",mpKind1:"恭王府",mpKind2:"恭王府",
-					mpKindname1:"成人票",mpKindname2:"半价票(学生/老人)",price2:38.5,price3:20},
-					{show:true,img:"http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_110x110_4c72dbfd.jpg",place:"圆明园(4A)",price1:25,discuss:11978,position:"北京.海淀区",mpKind1:"圆明园",mpKind2:"圆明园",
-					mpKindname1:"成人票(含大水法遗址、迷宫...)",mpKindname2:"导览器(中文)",price2:25,price3:2},
-					{show:false,img:"http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_110x110_2c172ba2.jpg",place:"天安门广场",price1:20,discuss:15936,position:"北京.东城区",mpKind1:"【当日票】",mpKind2:"故宫+珍宝馆+钟表馆",
-					mpKindname1:"故宫成人票",mpKindname2:"(成人票)",price2:39.9,price3:60},
-					{show:false,img:"http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_110x110_2de732a1.jpg",place:"水立方",price1:14,discuss:23413,position:"北京.奥林匹克公园",mpKind1:"水立方",mpKind2:"水立方",
-					mpKindname1:"成人票",mpKindname2:"儿童票",price2:30,price3:14,}
-				],
-				myscroll:"",			
+			return {	
+				myscroll:"",
 			//是否正在加载中	true表示正在加载  false表示没有加载
 			
 				show: false,
-				is_r:false,
 				flag: false,
 				loading: false,
 				myScroll:""
 			}
 		},
+
+		computed: mapState({
+			viewContent(state) {
+				return state.viewList.viewContent;
+			}
+		}),
 
 		methods: {
 			bindEvents() {
@@ -101,8 +92,9 @@
 
 			handleScrollEnd() {
 				if (this.flag) {
+					this.show = false;
 					this.loading = true;
-					console.log(this)
+					this.$store.commit("viewListRefresh")
 					setTimeout(this.handleGetDate.bind(this), 500);
 				}
 			},
@@ -110,15 +102,18 @@
 			handleGetDate: function() {
 				this.loading = false;
 				this.flag = false;
-				this.myScroll.refresh();
 			}
-			
 		},
 
-		mounted: function() {
-			this.myScroll = new iScroll("#wrapper");
-			console.log(this.myScroll);
-			this.bindEvents();
+		mounted:function() {
+			this.myScroll = new iScroll("#wrapper" ,{ mouseWheel: true,probeType:2 });
+		},
+
+		updated: function() {
+			setTimeout(()=>{
+          		this.myScroll.refresh();
+				this.bindEvents();
+        	},500)
 		}
 	}
 </script>
@@ -144,7 +139,7 @@
 	}
 	#wrapper{		
 		position: relative;
-		height: 10rem;
+		height: 9.6rem;
 		overflow: hidden;
 	}
 	.view-list {

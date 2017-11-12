@@ -3,7 +3,7 @@
 		<h3 class="weekend-title">周末去哪儿</h3>
 		<div class="goto" v-for="item in Weekend" >
 			<div class="goto-img" >
-				<img :src="item.img">
+				<img :src="item.img" alt="图片加载失败">
 			</div>
 			<div class="goto-txt">
 				<h4 class="goto-title">{{item.title}}</h4>
@@ -24,7 +24,6 @@ import { mapState } from "vuex"
 			}
 		})
 	}
-	// export default 
 </script>
 
 <style scoped>
@@ -38,6 +37,10 @@ import { mapState } from "vuex"
 		color: rgba(33,33,33);
 		line-height: .8rem;
 		background: #f5f5f5;
+		width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding-right: 1.4rem;
 	}
 	.goto-img {
 		overflow: hidden;

@@ -55,7 +55,20 @@ export default {
 				alphabet: [],
 				letter: []
 			} 
-		}, 
+		},
+
+	mounted() {
+		for(var i in this.foreignInfo) {
+			this.alphabet[i] = this.$refs[i][0].offsetTop;
+		}
+		//this.$store.commit("changeSidebarInfo",this.alphabet);
+
+        for(var key in this.foreignInfo) {
+            this.key = key;
+            this.letter.push(this.key);
+        }
+		
+	}, 
 
 	updated() {
 		for(var i in this.foreignInfo) {

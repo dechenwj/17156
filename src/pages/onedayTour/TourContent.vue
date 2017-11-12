@@ -1,66 +1,103 @@
 <template>
   <div>
-    <ul id="tourWrapper">
-      <li class="tour-list" v-for="item in tourContent" :key = "item.price">
-          <div class="tour-img">
-               <img :src="item.img">
-              <p class="tomorrow" v-if="item.show">可定明日</p> 
-          </div>
-
-          <div class="tour-cont">
-            <h4 class="tour-cont-title">{{item.title}}{{item.con}}</h4>
-              <ol>
-                <li class="first-title"><a href="jacaScript:;">{{item.li1}}</a></li>
-                <li><a href="jacaScript:;">{{item.li2}}</a></li>
-                <li><a href="jacaScript:;">{{item.li3}}</a></li>
-              </ol>
-              <div class="present" v-if="item.present">赠券</div>
-            <div class="sale icotitle"><i>￥</i><strong >{{item.price}}</strong>起</div>
-            <p class="sold icotitle">已售<span >{{item.num}}</span></p>
-          </div>          
-      </li>
-    </ul>
-    <div class="footer">
-      <div class="pagelist">
-        <span class="pre-page pageN">上一页</span>
-        <span class="page-num">1</span>
-        <span class="next-page pageN">下一页</span>
+    <div id="wrapper">
+      <div id="scroller">
+        <ul id="tourWrapper">
+          <li v-if="showLoading">正在加载...</li>
+          <li class="tour-list" v-for="item in TourConentinfo">
+          <router-link :to="item.link">
+              <div class="tour-img">
+                   <img :src="item.img">
+                  <p class="tomorrow" v-if="item.show">可定明日</p> 
+              </div>
+          </router-link>  
+              <div class="tour-cont">
+                <h4 class="tour-cont-title">{{item.title}}{{item.con}}</h4>
+                  <ol>
+                    <li class="first-title"><a href="jacaScript:;">{{item.li1}}</a></li>
+                    <li><a href="jacaScript:;">{{item.li2}}</a></li>
+                    <li><a href="jacaScript:;">{{item.li3}}</a></li>
+                  </ol>
+                  <div class="present" v-if="item.present">赠券</div>
+                <div class="sale icotitle"><i>￥</i><strong>{{item.price}}</strong>起</div>
+                <p class="sold icotitle">已售<span>{{item.num}}</span></p>
+              </div> 
+                    
+          </li>
+        </ul>
       </div>
-      <p class="toWhere"><a href="javaScript;">去哪门票</a></p>
-    </div>
-  </div>
+    </div>  
+      <div class="footer">
+        <div class="pagelist">
+          <span class="pre-page pageN">上一页</span>
+          <span class="page-num">1</span>
+          <span class="next-page pageN">下一页</span>
+        </div>
+        <p class="toWhere"><a href="javaScript;">去哪门票</a></p>
+      </div>
+</div>     
+
 </template>
+<script>
 
-<script scoped>
-  import { mapState } from "vuex"
-
+  import {mapState} from "vuex"
+  import IScroll from "../../utils/iscroll-probe.js"
+ 
   export default {
-      computed: mapState({
-         tourContent(state) {
-            return state.onedayTour.tourContent;
-         }
-      })
-  }
+      data(){
+        return {
+          showLoading:false
+        }
+      },
+      computed:mapState({
+        TourConentinfo(state){
+          return state.onedayTour.TourConentinfo;
+        }
+      }),
+      mounted(){  
+          this.myScroll = new IScroll('#wrapper', { mouseWheel: true,probeType:1 });
+          this.myScroll.on("scroll",()=>{
+            if(this.myScroll.y<(-this.TourConentinfo.length*84+270)){
+               this.showLoading=true,
+               this.$store.commit("refreshInfo");
+            }
+            if(this.myScroll.y>50){
+              this.showLoading=true,
+              this.$store.commit("refreshInfo");
+            }
+          })
+      },
+      updated(){
+        setTimeout(()=>{
+          this.showLoading=false;
+          this.myScroll.refresh();
+        },500)
+      }
+     } 
 </script>
 <style scoped>
 body{
   background-color:#F5F5F5;
 }
+#wrapper {
+  height: 9.6rem;
+  overflow: hidden;
+}
 .tour-list{
+  position: relative;
   width: 100%;
   height: 1.48rem;
   padding: .2rem 0 .2rem .2rem;
-  position: relative;
   background: #fff;
 }
 .tour-img{
   position: relative;
 }
 .tour-img img{
+  display: block;
   position: absolute;
   left: 0;
   top: 0;
-  display: block;
   width:1.6rem;
   height: 1.6rem;
 }
