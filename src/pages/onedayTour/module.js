@@ -1,4 +1,5 @@
 import axios from "axios"
+
 export default{
 	state:{
 		TourConentinfo:[]
@@ -8,7 +9,9 @@ export default{
 			axios.get("./static/onedayTour.json")
 			.then((response)=>{
 				if(response.status===200){
+					console.log(response.data.data);
 					const data=response.data.data.TourConentinfo;
+					
 					context.commit("changeTourConentinfo",data);
 				}
 			})
@@ -29,6 +32,6 @@ export default{
 			}else{
 				return false;
 			}
-		}
+		}	
 	}
 }

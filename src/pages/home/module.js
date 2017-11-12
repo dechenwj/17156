@@ -1,16 +1,9 @@
-import Vue from "vue"
-import Vuex from "vuex"
 import axios from "axios"
-import tourDetails from "../pages/tourDetails/module.js"
-import onedayTour from "../pages/onedayTour/module.js"
-import home from "../pages/home/module"
-import search from "../pages/search/module"
 
-Vue.use(Vuex);
 
-export default new Vuex.Store({
+export default {
 	state: {
-		swiperInfo: [],
+		SwiperInfo: [],
 		IcoSwiperInfo: [],
 		HotRecommend: [],
 		Weekend: []
@@ -28,19 +21,23 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		changeInfo(state, data) {
-			state.swiperInfo = data.swiperInfo;
+			state.SwiperInfo = data.SwiperInfo;
 			state.IcoSwiperInfo = data.IcoSwiperInfo;
 			state.HotRecommend = data.HotRecommend;
 			state.Weekend = data.Weekend;
 		}
 		
 	},
-	getters: {},
-
-	modules:{
-		home: home,
-		search: search,
-		tourDetails:tourDetails,
-		onedayTour:onedayTour
+	getters: {
+		shouldGetData(state) {
+			if (!state.SwiperInfo.length &&
+		 		!state.IcoSwiperInfo.length &&
+		 		!state.HotRecommend.length &&
+		 		!state.Weekend) {
+				return true;
+			}else {
+				return false;
+			}
+		}
 	}
-})
+}

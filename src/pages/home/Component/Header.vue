@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style socped>
+<style scoped>
  	.header{
  		height: .88rem;
  		background: #00bcd4;
@@ -58,8 +58,6 @@ export default {
  		padding-right:.3rem;
  	}
  	.header-city{
- 	
- 	
  		overflow: hidden;
 		display: inline-block;
  		white-space: nowrap;

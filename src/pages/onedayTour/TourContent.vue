@@ -1,5 +1,6 @@
 <template>
   <div>
+<!-- <<<<<<< HEAD -->
     <div id="wrapper">
       <div id="scroller">
         <ul id="tourWrapper">
@@ -33,7 +34,8 @@
         </div>
         <p class="toWhere"><a href="javaScript;">去哪门票</a></p>
       </div>
-  </div>
+</div>     
+
 </template>
 <script>
   import {mapState} from "vuex"
@@ -69,7 +71,7 @@
           this.myScroll.refresh();
         },500)
       }
-  }
+     } 
 </script>
 
 <style scoped>

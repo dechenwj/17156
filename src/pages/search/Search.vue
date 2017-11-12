@@ -13,6 +13,12 @@ export default {
 	components: {
 		"search-header": HeaderComponent,
 		"search-content": ContentComponent
+	},
+
+	mounted() {
+		if(this.$store.getters.GetSearchData) {
+			this.$store.dispatch("getSearchInfo");
+		}
 	}
 }
 </script>

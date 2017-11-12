@@ -4,10 +4,8 @@
   </div>
 </template>
 
-<script type="text/javascript">
+<script>
 
-import vue from './vue.js';
-import iScroll from './iscroll.js';
 
 export default {
 	
@@ -18,4 +16,5 @@ export default {
   @import "./reset.css";
   @import "./iconfont/iconfont.css";
   @import '../../node_modules/swiper/dist/css/swiper.css';
+	
 </style>
