@@ -1,11 +1,13 @@
 <template>
     <header class="header">
+    <router-link to="/">
         <div class="header-left iconfont icon-fanhui"></div>
+    </router-link>
         <h1 class="header-title">
             <input type="text" id="search-input-bind" placeholder="输入城市或景点名" class="header-input" />
         </h1>
         <span class="header-right">
-            <button class="header-search" id="search-form-submit">搜索</button>
+            <button class="header-search" id="search-form-submit">{{city}}</button>
         </span>
     </header>
 </template>
@@ -13,7 +15,7 @@
 <script>
 
 export default {
-
+    props: ["city"]
 }
 
 </script>

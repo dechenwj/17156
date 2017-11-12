@@ -32,7 +32,7 @@
                     </div>
                     <div class="hotlist-item sec">
                         <div class="hotlist-iteminner" ref="city">
-                            <span class="hotlist-each sec-each" v-for="item in cityList">
+                            <span class="hotlist-each sec-each" v-for="item in cityList"  @click="handleCityClick">
                                 {{item.name}}
                             </span>
                         </div>
@@ -66,6 +66,10 @@ export default{
             this.cityNum += -0.86;
             this.$refs.change.style.top = this.changeNum + "rem";
             this.$refs.city.style.top = this.cityNum + "rem";
+        },
+
+        handleCityClick(e) {
+            this.$emit("city",e.target.innerText);
         }
     },
 
