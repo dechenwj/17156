@@ -1,6 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import axios from "axios"
+import tourDetails from "../pages/tourDetails/module.js"
+import onedayTour from "../pages/onedayTour/module.js"
 
 Vue.use(Vuex);
 
@@ -31,5 +33,11 @@ export default new Vuex.Store({
 		}
 		
 	},
-	getters: {}
+	getters: {},
+
+	modules:{
+		tourDetails:tourDetails,
+		onedayTour:onedayTour
+	}
 })
+

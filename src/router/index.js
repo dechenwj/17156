@@ -5,7 +5,7 @@ import Search from '@/pages/search/Search'
 import viewList from '@/pages/viewList/Home'
 import Indent from '@/pages/indent/indent'
 import OnedayTour from '@/pages/onedayTour/Home'
-
+import Tourdetails from '@/pages/tourDetails/tourDetails'
 
 Vue.use(Router)
 
@@ -35,6 +35,10 @@ export default new Router({
       path:'/onedayTour',
       name:"onedayTour",
       component:OnedayTour
+    },{
+      path:'/tourDetails',
+      name:"tourDetails",
+      component:Tourdetails
     }
   ]
 })
