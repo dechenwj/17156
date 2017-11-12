@@ -3,8 +3,10 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Search from '@/pages/search/Search'
 import viewList from '@/pages/viewList/Home'
+import CityList from '@/pages/city/CityList'
 import Indent from '@/pages/indent/indent'
 import OnedayTour from '@/pages/onedayTour/Home'
+import Tourdetails from '@/pages/tourDetails/tourDetails'
 
 Vue.use(Router)
 
@@ -26,6 +28,11 @@ export default new Router({
       component: Search
     },
     {
+      path: '/cityList',
+      name: 'cityList',
+      component: CityList
+    },
+    {
       path: '/indent',
       name: 'indent',
       component: Indent
@@ -34,6 +41,10 @@ export default new Router({
       path:'/onedayTour',
       name:"onedayTour",
       component:OnedayTour
+    },{
+      path:'/tourDetails',
+      name:"tourDetails",
+      component:Tourdetails
     }
   ]
 })

@@ -52,7 +52,7 @@
 
 <script>
 	import { mapState } from "vuex"
-	// require("./iscroll.js")
+	require("./iscroll.js")
 	import iScroll from "./iscroll.js"
 	export default {
 		data() {
@@ -107,7 +107,7 @@
 			
 		},
 
-		mounted: function() {
+		mounted:function() {
 			this.myScroll = new iScroll("#wrapper");
 		},
 
@@ -139,7 +139,7 @@
 	}
 	#wrapper{		
 		position: relative;
-		height: 10rem;
+		height: 9.6rem;
 		overflow: hidden;
 	}
 	.view-list {

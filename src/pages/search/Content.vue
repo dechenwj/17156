@@ -118,6 +118,10 @@ export default{
     font-size: .26rem;
     text-align: center;
     line-height: 0.72rem;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .hotlist-group{
     position: relative;

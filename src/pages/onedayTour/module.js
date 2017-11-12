@@ -1,34 +1,37 @@
 import axios from "axios"
 
-
-export default {
-	state: {
-		tourContent: []
+export default{
+	state:{
+		TourConentinfo:[]
 	},
-	actions: {
-		getOnedayInfo(context) {
-			axios.get('/static/onedayTour.json')
-				.then((response) => {
-					if (response.status === 200) {
-						const {data} = response.data;
-						context.commit("changeOnedayInfo",data)
-					}
-				})
+	actions:{
+		getTourContentInfo(context){
+			axios.get("./static/onedayTour.json")
+			.then((response)=>{
+				if(response.status===200){
+					console.log(response.data.data);
+					const data=response.data.data.TourConentinfo;
+					
+					context.commit("changeTourConentinfo",data);
+				}
+			})
 		}
 	},
-	mutations: {
-		changeOnedayInfo(state, data) {
-			state.tourContent = data.tourContent;
+	mutations:{
+		changeTourConentinfo(state,data){
+			state.TourConentinfo=data;
+		},
+		refreshInfo(state,data){
+			state.TourConentinfo.push(...state.TourConentinfo);
 		}
-		
 	},
-	getters: {
-		GetOnedayData(state) {
-			if (!state.tourContent.length) {
+	getters:{
+		shouldGetTourDate(state){
+			if(!state.TourConentinfo.length){
 				return true;
-			}else {
+			}else{
 				return false;
 			}
-		}
+		}	
 	}
 }

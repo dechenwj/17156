@@ -1,6 +1,6 @@
 <template>
 <div>
-	<tour-Content></tour-Content>
+	<tour-content></tour-content>
 </div>
 </template>
 
@@ -8,15 +8,14 @@
 	import ContentComponent from "./TourContent";
 	export default {
 		components: {
-			"tour-Content": ContentComponent
+			"tour-content": ContentComponent
 		},
-
-		mounted() {
-			if (this.$store.getters.GetOnedayData) {
-				this.$store.dispatch("getOnedayInfo");
+		mounted:function(){
+			if(this.$store.getters.shouldGetTourDate){
+				this.$store.dispatch("getTourContentInfo");
 			}
 		}
-	}
+	}	
 </script>
 
 <style>
