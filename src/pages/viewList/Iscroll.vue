@@ -13,7 +13,7 @@
 			<div id="view-wrapper1">
 				<div id="scroller">
 					<ul id="list">
-						<li v-for="item in content">
+						<li v-for="item in content" :key="item.name">
 							<img class="view-class-con-img" :src="item.img"/>
 							<span>{{item.name}}</span>
 						</li>
@@ -84,7 +84,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.view-iscroll{
 		width: 100%;
 		height: 0.8rem;

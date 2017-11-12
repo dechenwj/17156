@@ -25,9 +25,9 @@ export default {
 			state.IcoSwiperInfo = data.IcoSwiperInfo;
 			state.HotRecommend = data.HotRecommend;
 			state.Weekend = data.Weekend;
-		}
-		
+		}	
 	},
+	
 	getters: {
 		shouldGetData(state) {
 			if (!state.SwiperInfo.length &&

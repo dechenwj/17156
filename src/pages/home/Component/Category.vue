@@ -24,7 +24,7 @@
   	</swiper>
 </template>
 
-<script>
+<script scoped>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
 	import { mapState } from "vuex"
 	export default {

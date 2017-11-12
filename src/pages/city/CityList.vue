@@ -35,7 +35,6 @@ export default {
 	mounted() {
 		if(this.$store.getters.shouldGetCityData) {
 			this.$store.dispatch("getCityInfo");
-			alert()
 		}
 	}
 

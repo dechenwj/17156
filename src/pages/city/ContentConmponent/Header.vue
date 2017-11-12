@@ -3,8 +3,8 @@
         <div class="header-return iconfont icon-fanhui"></div>
         <h1 class="header-title">
             <div class="header-country" @click="handleTypeClick">
-                <span class="header-city inland " :class="{'check': isActive}" inland=true>国内</span>
-                <span class="header-city foreign" :class="{'check': !isActive}">海外</span>
+                <span class="header-city inland"  :class="{'check': !isActive}">国内</span>
+                <span class="header-city foreign" :class="{'check': isActive}" inland=true>海外</span>
             </div>
         </h1>
     </header>
@@ -19,7 +19,6 @@ export default {
     },
 
     methods: {
-
         handleTypeClick(e) {
             const isInland = e.target.getAttribute("inland");
             this.isActive = isInland ? true : false;

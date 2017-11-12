@@ -27,7 +27,7 @@ import { mapState } from "vuex"
 	// export default 
 </script>
 
-<style>
+<style scoped>
 	.weekend-content {
 		background: #fff;
 	}

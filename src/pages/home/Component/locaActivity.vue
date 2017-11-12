@@ -28,7 +28,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.locaActivity{
 		background-color: #F5F5F5;
 	}

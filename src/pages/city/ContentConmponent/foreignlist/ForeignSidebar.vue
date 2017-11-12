@@ -1,25 +1,44 @@
 <template>
     <div class="sidebar">
-		<div v-for="item in letters" :key="item">
-            <div @click="sidebarClick">
-                {{item}}
-            </div>
+        <div v-for="(item,key) in foreignInfo" :key="key" @touchstart="HandleSidebarTouchstart" :ref="key">
+            {{key}}
         </div>
 	</div>
 
 </template>
 
 <script>
+
+import alphabet from "./ForeignContent"
 export default {
     data() {
         return {
-            letters: ["A","B","C","D","F","G","H","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"]
+           
         }
     },
+
+    computed: {
+
+		foreignInfo() {
+			return this.$store.state.city.foreignInfo;
+		}
+	},
+    mounted() {
+
+    },
     methods: {
-        sidebarClick: function(e) {
-            let value = e.target.innerText;
+        HandleSidebarTouchstart: function(e) {
+            //console.log(e.path[1].offsetTop)  108
+            //console.log(this.$refs.A[0].clientHeight) 16
+
+            var nowPosition = parseInt((e.touches[0].clientY - 108)/16);
+            this.$emit("handleChooseLetter", nowPosition);
+            document.addEventListener("touchmove",this.handleMoveTouch, false);
+        	document.addEventListener("touchend",this.handleMoveEnd, false)
         },
+        handleMoveTouch: function(e) {
+            
+        }
     }
 }
 </script>

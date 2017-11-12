@@ -1,8 +1,8 @@
 <template>
     <div>
 		<foreign-search></foreign-search>
-		<foreign-content></foreign-content>
-		<foreign-sidebar></foreign-sidebar>
+		<foreign-content :nowPosition = "nowPosition"></foreign-content>
+		<foreign-sidebar @handleChooseLetter = "handleChooseLetter"></foreign-sidebar>
 	</div>
 </template>
 
@@ -14,6 +14,12 @@ import SidebarComponent from "./ForeignSidebar";
 
 
 export default {
+	data() {
+		return {
+			nowPosition: ''
+		}
+	},
+	 
 
 	components: {
 		"foreign-search": SearchComponent,
@@ -22,7 +28,9 @@ export default {
 	},
 
 	methods: {
-
+		handleChooseLetter(nowPosition) {
+			this.nowPosition = nowPosition;
+		}
 	}
 }
 </script>
