@@ -54,7 +54,6 @@
 		},
 		methods:{
 			handleBackHome() {
-				console.log(123);
 				this.$router.go(-1);
 			}
 		}
