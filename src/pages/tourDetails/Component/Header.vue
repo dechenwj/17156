@@ -50,14 +50,14 @@
 import {mapState} from "vuex"
 
 export default {
-	computed:mapState({
+	computed: mapState( {
 		headerInfo(state){
 			return state.tourDetails.headerInfo;
 		}
-		
 	})
 }
 </script>
+
 
 <style scoped>
 .place{
@@ -69,9 +69,6 @@ export default {
 	font-size: .24rem;
 	color: #616161;
 }
-</style>
-
-<style>
 html{ 
 	 background-color:#F5F5F5;
 }
