@@ -13,10 +13,12 @@
 	    <swiper-slide>
 	    	<div class="category-container category-container-two">
 	    		<dl class="category-item" v-for="item in IcoSwiperInfo[1]" :key="item.id">
+	    		<router-link :to="item.link">
 					<dt class="category-item-img">
 						<img :src="item.img" :alt="item.alt">
 					</dt>
 					<dd class="category-item-title">{{item.title}}</dd>
+				</router-link>	
 				</dl>
 	    	</div>
 	    </swiper-slide>
@@ -24,10 +26,11 @@
   	</swiper>
 </template>
 
-<script>
+<script scoped>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+	import { mapState } from "vuex"
 	export default {
-		props: ["IcoSwiperInfo"],
+		
 		data() {
   			return {
     			swiperOption: {
@@ -38,16 +41,24 @@
     			}
  			}
 		},
+
 	    components: {
 		    swiper,
 		    swiperSlide
-	  	}
+	  	},
+
+	  	computed: mapState({
+	  		IcoSwiperInfo(state) {
+	  			return state.home.IcoSwiperInfo
+	  		}
+	  	})
   	}
 </script>
-<style type="text/css">
+<style scoped>
 .category-container{
 	width: 100%;
 	height: 3.6rem;
+	background: #fff;
 }
 .category-item{
 	width: 25%;

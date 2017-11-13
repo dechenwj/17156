@@ -13,16 +13,12 @@
 		<div class="view-class-con" v-show="show">
 			<div id="view-wrapper1">
 				<div id="scroller1">
-					<div id="wrapper">
-						<div id="scroller">
-							<ul id="list">
-								<li v-for="item in content">
-									<img class="view-class-con-img" :src="item.img"/>
-									<span>{{item.name}}</span>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<ul id="list" style="background: #FAFAFA;">
+						<li v-for="item in content">
+							<img class="view-class-con-img" :src="item.img" style="width: .3rem; height: .3rem;"/>
+							<span>{{item.name}}</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
@@ -96,15 +92,9 @@
 	}
 </script>
 
-<style>
-	#wrapper{
-		position: absolute;
-    	width: 100%;
-    	overflow: hidden;
-	}
-	#scroller{
-		height: 100%;
-	}
+
+<style scoped>
+
 	.view-iscroll{
 		width: 100%;
 		height: 0.8rem;
@@ -187,12 +177,12 @@
 
 	#scroller1 li ,#scroller2 li {
 		padding: 0 10px;
-		height: 40px;
-		line-height: 40px;
+		height: .8rem;
+		line-height: .8rem;
 		border-bottom: 1px solid #ccc;
 		border-top: 1px solid #fff;
 		background-color: #fafafa;
-		font-size: 14px;
+		font-size: 0.28rem;
 	}
 	#scroller2 li{
 		text-align: center;
@@ -223,7 +213,7 @@
 	    vertical-align: middle;
 	    margin-right: .1rem;
 	}
-	#list li,#list2 li{
+	#scroller1 #list li,#scroller2 #list2 li{
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;

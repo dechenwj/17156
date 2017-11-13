@@ -16,7 +16,6 @@
 		</div>
 	</div>
 </template>
-
 <script>
 	export default {
 		data(){
@@ -28,7 +27,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.locaActivity{
 		background-color: #F5F5F5;
 	}

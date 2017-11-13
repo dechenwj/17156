@@ -2,38 +2,38 @@
 	<div class="indent-main">
 		<div class="indent-title">
 			<div class="info-left">
-				<h2>【上午场】故宫成人票凭身份证入园</h2>
-				<ul>
-					<li>
-						<img src="../../../static/img/guo01.png">
+				<h2 class="info-title">【上午场】故宫成人票凭身份证入园</h2>
+				<ul class="info-taglist">
+					<li class="info-tagitem">
+						<img class="info-tagicon" src="../../../static/img/guo01.png">
 						2017-11-11
 					</li>
-					<li>
+					<li class="info-tagicon">
 						<img src="../../../static/img/guo02.png">
 						条件退
 					</li>
 				</ul>
 			</div>
 			<div class="info-right">
-				<div>
-					<span>￥<i>40</i></span>/张
+				<div class="indent-price">
+					<span class="info-price">￥<i class="info-price-num">40</i></span>/张
 				</div>
-				<p>预定须知</p>
+				<p class="info-note">预定须知</p>
 			</div>
 		</div>
 
 		<div class="indent-num">
-			<p>购买数量</p><span class="maxnum">最多买5张</span>
+			<p class="info-buy-num">购买数量</p><span class="maxnum">最多买5张</span>
 			<div class="setnum">
-				<span class="cut colorno"><span></span></span>
-				<input type="text" value="1" />
-				<span class="add coloryes"><span><span></span></span></span>
+				<span class="cut colorno"><span class="minus"></span></span>
+				<input class="change-buy-num" type="text" value="1" />
+				<span class="add coloryes"><span class="add-horizontal"><span class="add-vertical"></span></span></span>
 			</div>
 		</div>
-		<div class="indent-centre">
-			<div class="center-name">
-				<label>游客<span>1</span></label>
-				<input type="text" value="游客姓名"/>
+		<div class="indent-tourist">
+			<div class="tourist-info">
+				<label class="tourist-id">游客<span>1</span></label>
+				<input class="tourist-name" type="text" value="游客姓名"/>
 				<span class="ico"></span>
 			</div>
 			<div class="center-tel">
@@ -51,7 +51,7 @@
 	}
 </script>
 
-<style socped>
+<style scoped>
 	.indent-main {
 		width: 100%;
 		padding-bottom: 1.4rem;
@@ -68,24 +68,24 @@
 		margin-right: 1.9rem;
 		float:left;
 	}
-	.info-left>h2 {
+	.info-title {
 		color: #212121;
 		font-size: .32rem;
 		line-height: .44rem;
 		margin-bottom: .04rem;
 	}
-	.info-left>ul {
+	.info-taglist {
 		margin-left: -.2rem;
 		overflow: hidden;
 	}
-	.info-left>ul li {
+	.info-tagitem {
 		float: left;
 		line-height: .44rem;
 		margin-left: .2rem;
 		color: #616161;
 		font-size: .24rem;
 	}
-	.info-left>ul li img {
+	.info-tagicon {
 		position: relative;
 		width: .24rem;
 		height: .24rem;
@@ -99,20 +99,20 @@
 		text-align: right;
 		float: right;
 	}
-	.info-right>div {
+	.indent-price {
 		height: .44rem;
 		line-height: .44rem;
 		color: #9e9e9e;
 		font-size: .24rem;
 	}
-	.info-right>div>span {
+	.info-price {
 		color: #ff8300;
 	}
-	.info-right>div>span>i {
+	.info-price-num {
 		margin-left: .04rem;
 		font-size: .4rem;
 	}
-	.info-right>p {
+	.info-note {
 		margin-top: .12rem;
 		line-height: .32rem;
 		color: #00bcd4;
@@ -125,7 +125,7 @@
 		position: relative;
 		background: #fff;
 	}
-	.indent-num>p {
+	.info-buy-num {
 		position: relative;
 		top: .12rem;
 		float: left;
@@ -172,7 +172,7 @@
 	.coloryes {
 		background: #00afc4;
 	}
-	.cut>span {
+	.minus {
 		background: #cad1d7;
 		top: .26rem;
 		left:.12rem;
@@ -182,7 +182,7 @@
 		line-height: .5rem;
 		font-size: .28rem;
 	}
-	.add>span {
+	.add-horizontal {
 		top: .26rem;
 		left: .12rem;
 		width: .3rem;
@@ -192,7 +192,7 @@
 		line-height: .5rem;
 		font-size: .28rem;
 	}
-	.add>span>span {
+	.add-vertical {
 		top: -.1rem;
 		left: .12rem;
 		width: .06rem;
@@ -202,17 +202,36 @@
 		line-height: .5rem;
 		font-size: .28rem;
 	}
-	.setnum input {
+	.change-buy-num {
 		width: .6rem;
 		height: .6rem;
 		padding: 0 .06rem;
 		border:0 none;
 		text-align: center;
 	} 
-	.indent-centre {
+	.indent-tourist {
 		margin: .2rem 0;
 		position: relative;
-		color: #212121;
+		color: #616161;
 		font-size: .28rem;
+	}
+	.tourist-info {
+		position: relative;
+		padding: .24rem;
+		background: #fff;
+		overflow: hidden;
+	}
+	.tourist-id {
+		position: relative;
+		width: 1.6rem;
+		font-size: .3rem;
+		line-height: .5rem;	
+	}
+	.tourist-name {
+		height: .38rem;
+		padding: .06rem 0;
+		border: 0;
+		line-height: .38rem;
+		font-family: Arial, "Microsoft Yahei" ,""
 	}
 </style>

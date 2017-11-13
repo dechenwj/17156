@@ -1,6 +1,12 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import axios from "axios"
+import tourDetails from "../pages/tourDetails/module.js"
+import onedayTour from "../pages/onedayTour/module.js"
+import home from "../pages/home/module"
+import search from "../pages/search/module"
+import city from "../pages/city/module"
+import viewList from "../pages/viewList/module"
 
 Vue.use(Vuex);
 
@@ -31,5 +37,14 @@ export default new Vuex.Store({
 		}
 		
 	},
-	getters: {}
+	getters: {},
+
+	modules:{
+		home: home,
+		onedayTour: onedayTour,
+		search: search,
+		city: city,
+		viewList: viewList
+	}
 })
+

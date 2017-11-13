@@ -1,6 +1,6 @@
 <template>
   	<swiper :options="swiperOption" ref="mySwiper">
-    	<swiper-slide v-for="item in swiperInfo" :key="item.id">
+    	<swiper-slide v-for="item in SwiperInfo" :key="item.id">
     		<div class="swiper-img-con">
     			<img class="swiper-img" :src="item.imgUrl">
     		</div>
@@ -11,9 +11,10 @@
 
 <script>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper' 
+	import { mapState } from "vuex"
+
 	export default {
 
-		props:["swiperInfo"],
 	    data() {
 	      	return {
 	        	swiperOption: {
@@ -25,10 +26,17 @@
 	        	}
 	      	}
 	    },
+
 		components: {
 		   swiper,
-		   swiperSlide
-		}
+		   swiperSlide	 
+		},
+
+		computed: mapState({
+		   	SwiperInfo(state) {
+		   		return state.home.SwiperInfo
+		   	}
+		})
 	}
 </script>
 

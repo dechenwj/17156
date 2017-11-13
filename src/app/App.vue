@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-   <router-view/>
+   	<router-view/>
   </div>
 </template>
 
 <script>
 
-import vue from './vue.js';
-import iScroll from './iscroll.js';
 
 export default {
 	

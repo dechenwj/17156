@@ -1,15 +1,17 @@
 <template>
-  <header class="header">
+  <header class="header" >
   	<div class="header-left iconfont icon-fanhui"></div>
 	<router-link to="/search">
-  	<div class="header-title">
+  	<div class="header-title" key="home">
   		输入城市/景点/游玩主题
   	</div>
 	</router-link>
   	<div class="header-right">
-  		<div class="header-city-wrapper">
-  				<span class="header-city">北京</span>	
-  		</div>
+		<router-link to="/cityList">
+			<div class="header-city-wrapper">
+					<span class="header-city">北京</span>	
+			</div>
+		</router-link>
   	</div>
   </header>
 </template>
@@ -20,7 +22,7 @@ export default {
 }
 </script>
 
-<style socped>
+<style scoped>
  	.header{
  		height: .88rem;
  		background: #00bcd4;
@@ -39,7 +41,6 @@ export default {
  		left:.8rem;
  		right: 1.36rem;
  		top: .14rem;
- 		
  		line-height: .6rem;
  		background: #fff;
  		border-radius: .06rem;
@@ -58,13 +59,12 @@ export default {
  		padding-right:.3rem;
  	}
  	.header-city{
- 	
- 	
  		overflow: hidden;
 		display: inline-block;
  		white-space: nowrap;
 		width: 1rem;
- 		text-overflow: ellipsis;
+		 text-overflow: ellipsis;
+		 color: white;
  	}
  	.header-city::after{
  		content: "\0020";

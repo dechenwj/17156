@@ -1,6 +1,8 @@
 <template>
   <header class="header">
+  <router-link to="/">
   	<div class="header-left iconfont icon-fanhui"></div>
+    </router-link>
   	<div class="header-title">
   		北京
   	</div>
@@ -18,7 +20,7 @@ export default {
 }
 </script>
 
-<style socped>
+<style scoped>
  	.header{
  		height: .88rem;
  		background: #00bcd4;

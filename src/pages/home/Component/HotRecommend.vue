@@ -2,37 +2,40 @@
 	<div class="hotRecom">
 		<h2 class="hot">热销推荐</h2>
 		<div class="hotRecom-list-con">
-			
 			<ul>
-
 				<li class="hotRe-list" v-for="(item,key) in HotRecommend" :key="item.id" ref="{{key}}" @click="handleRouter">
 					<img class="hotRe-list-img" :src="item.img"/>
 					<h2 class="hotRe-list-name">{{item.name}}</h2>
 					<p class="hotRe-list-introduce">{{item.introduce}}</p>
 					<span class="hotRe-list-money"><span class="hotRe-list-yuan">￥</span><b class="hotRe-list-fontcolor">{{item.money}}</b>起</span>
 				</li>
-
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
+
 	require('../../../utils/iscroll-probe.js');
+	import { mapState } from "vuex"
 	export default {
-		props: ["HotRecommend"],
+		
 		methods:{
 			handleRouter(e) {
 				if(e.path[1].children[1].innerText == "故宫"){
 					this.$router.push('/thePalaceMuseum');
 				}
 			}
-		}
-		
+		},
+		computed: mapState({
+			HotRecommend(state) {
+				return state.home.HotRecommend;
+			}
+		})
 	}
 </script>
 
-<style>
+<style scoped>
 	.hot{
 		height: .8rem;
 		line-height: .8rem;
