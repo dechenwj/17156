@@ -9,21 +9,26 @@
 				<span class="view-sort-con" @click="show2 = !show2 ,show = false">推荐排序<span class="view-bor-top" v-bind:class="{ 'view-bor-top' : bor1, 'view-bor-bottom': !bor1}"></span></span>
 			</div>
 		</div>
+		
 		<div class="view-class-con" v-show="show">
 			<div id="view-wrapper1">
-				<div id="scroller">
-					<ul id="list">
-						<li v-for="item in content">
-							<img class="view-class-con-img" :src="item.img"/>
-							<span>{{item.name}}</span>
-						</li>
-					</ul>
+				<div id="scroller1">
+					<div id="wrapper">
+						<div id="scroller">
+							<ul id="list">
+								<li v-for="item in content">
+									<img class="view-class-con-img" :src="item.img"/>
+									<span>{{item.name}}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 			
 			<div id="view-class-empty" @click="show = !show, isA = !isA, bor = !bor"></div>
 		</div>
-		
+	
 		<div class="view-sort-content" v-show="show2">
 			<div id="view-wrapper2">
 				<div id="scroller2">
@@ -40,7 +45,11 @@
 </template>
 
 
+
 <script>
+	require('../../utils/iscroll-probe.js');
+	
+	
 	export default {
 		data(){
 			return {
@@ -58,15 +67,12 @@
 					{name:'演出',img:'http://img1.qunarzz.com/piao/fusion/1608/e6/f8a210e488ba7602.png'},
 					{name:'游乐场',img:'http://img1.qunarzz.com/piao/fusion/1608/3e/d07407699d56c202.png'},
 					{name:'自然风光',img:'http://img1.qunarzz.com/piao/fusion/1608/f8/799d67d22404c602.png'},
-					
 					{name:'公园',img:'http://img1.qunarzz.com/piao/fusion/1608/70/a7a71fb69cc7d902.png'},
 					{name:'展馆',img:'http://img1.qunarzz.com/piao/fusion/1608/de/8b3631887808e202.png'},
 					{name:'温泉',img:'http://img1.qunarzz.com/piao/fusion/1608/86/95cb8117ad91a402.png'},
 					{name:'室内娱乐',img:'http://img1.qunarzz.com/piao/fusion/1509/1e/bee608077e1927.png'},
-					
 					{name:'城市观光',img:'http://img1.qunarzz.com/piao/fusion/1608/d5/2a3ec877befef902.png'},
 					{name:'体验馆',img:'http://img1.qunarzz.com/piao/fusion/1608/15/8883a00c917e5202.png'},
-					
 					{name:'餐饮',img:'http://img1.qunarzz.com/piao/fusion/1608/ce/e06a995a69d60702.png'},
 					{name:'水上玩乐',img:'http://img1.qunarzz.com/piao/fusion/1608/88/081697df39c9f802.png'},
 					{name:'手工',img:'http://img1.qunarzz.com/piao/fusion/1608/26/1eea67d9388e4b02.png'},
@@ -78,13 +84,27 @@
 				]
 			}
 		},
-		methods:{
-	
+		mounted() {
+			window.onscroll = () =>{
+				this.show = this.show2 = false;
+				this.isA = this.isB = false;
+				this.bor = this.bor1 = true;
+			}
+					
 		}
+
 	}
 </script>
 
 <style>
+	#wrapper{
+		position: absolute;
+    	width: 100%;
+    	overflow: hidden;
+	}
+	#scroller{
+		height: 100%;
+	}
 	.view-iscroll{
 		width: 100%;
 		height: 0.8rem;
@@ -134,18 +154,21 @@
 		top: 0.28rem;
 	}
 	#view-wrapper1{
-	width: 100%;
-	height: 50%;
-	background: #ccc;
-	float: left;
-	overflow: hidden;
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		background: #ccc;
+		float: left;
+		overflow: hidden;
 	}
 	#view-wrapper2{
+		position: absolute;
+		width: 100%;
 		height: 2.52rem;
 	}
-	#scroller{
+	#scroller1{
 		width: 50%;
-		height:50%;
+		height:100%;
 		overflow: auto;
 		position: absolute;
 		z-index: 1;
@@ -154,7 +177,7 @@
 		width: 100%;
 		text-align: center;
 	}
-	#scroller ul ,#scroller2 ul{
+	#scroller1 ul ,#scroller2 ul{
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -162,7 +185,7 @@
 		text-align: left;
 	}
 
-	#scroller li ,#scroller2 li {
+	#scroller1 li ,#scroller2 li {
 		padding: 0 10px;
 		height: 40px;
 		line-height: 40px;
@@ -173,7 +196,7 @@
 	}
 	#scroller2 li{
 		text-align: center;
-	}
+	}	
 	.view-class-con{
 		position: fixed;
 		width: 100%;	
