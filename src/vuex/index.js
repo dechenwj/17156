@@ -42,6 +42,7 @@ export default new Vuex.Store({
 	modules:{
 		home: home,
 		onedayTour: onedayTour,
+		tourDetails: tourDetails,
 		search: search,
 		city: city,
 		viewList: viewList
