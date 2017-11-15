@@ -1,6 +1,6 @@
 <template>
 	<div>
-  		<index-home></index-home>
+  	<index-home></index-home>
 		<index-swipert ></index-swipert>
 		<index-ico-swiper ></index-ico-swiper>
 		<index-Activity></index-Activity>
