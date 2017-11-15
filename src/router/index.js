@@ -47,7 +47,7 @@ export default new Router({
     	path:'/thePalaceMuseum',
     	name:'thePalaceMuseum',
     	component:thePalaceMuseum
-	},
+	  },
     {
       path:'/tourDetails',
       name:"tourDetails",
